@@ -1,0 +1,8 @@
+# wifi
+#
+# Display Wifi AP
+[wifi]
+label= 
+interval=60
+background=#b48ead
+align=center

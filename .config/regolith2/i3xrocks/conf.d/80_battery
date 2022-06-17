@@ -1,0 +1,11 @@
+# Battery indicator
+#
+# Displays total percentage charge left of specified battery.
+# You can specify the instance by adding:
+# instance=BAT0
+[battery]
+# label= 
+interval=10
+background=#a3be8c
+min_width=80
+align=center

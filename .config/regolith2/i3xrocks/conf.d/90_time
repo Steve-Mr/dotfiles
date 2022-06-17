@@ -1,0 +1,5 @@
+# Date Time
+[time]
+label= 
+interval=xresource:i3xrocks.time.interval 10
+background=#81a1c1

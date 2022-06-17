@@ -1,0 +1,7 @@
+# Media Player
+#
+# Displays media controls
+[ethernet]
+label= 
+interval=60
+background=#bd93f9

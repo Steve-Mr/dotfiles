@@ -1,0 +1,10 @@
+# Rofication
+#
+# Displays notification count
+[rofication]
+# label= 
+interval=10
+background=#88c0d0
+min_width=70
+align=center
+
