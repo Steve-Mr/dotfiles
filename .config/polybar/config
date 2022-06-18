@@ -74,7 +74,7 @@ modules-left = i3
 modules-center = xwindow
 modules-right = eth wlan xkeyboard temperature rofication-status battery date powermenu
 
-tray-position = right
+tray-position = ${env:TRAY_POS:}
 tray-padding = 0
 ;tray-background = #0063ff
 
