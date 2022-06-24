@@ -382,3 +382,5 @@ for_window [title="^Origin$"] floating enable
 for_window [title="^wemeetapp$"] floating enable
 
 for_window [title="flameshot"] floating enable
+
+for_window [title="Qq"] floating enable
