@@ -10,7 +10,7 @@ bindsym $mod+$i3-wm.binding.settings exec --no-startup-id $i3-wm.program.setting
 ## Modify // Display Settings // <> d ##
 set_from_resource $i3-wm.binding.display i3-wm.binding.display d
 set_from_resource $i3-wm.program.display i3-wm.program.display regolith-control-center --class=floating_window display
-bindsym $mod+$i3-wm.binding.display exec --no-startup-id $i3-wm.program.display
+bindsym $mod+$i3-wm.binding.display exec /usr/share/brightness-controller/init.py
 
 ## Modify // Wifi Settings // <> w ##
 set_from_resource $i3-wm.binding.wifi i3-wm.binding.wifi w
