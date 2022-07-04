@@ -5,9 +5,9 @@ rofication_print() {
     if [ $status = '?' ]; then
         printf $status
     elif [ $status -gt 0 ]; then
-        printf " %s" "$status"
+        printf "  %s" "$status"
     else
-        printf " 0"
+        printf "  0"
     fi
     printf '\n'
 }

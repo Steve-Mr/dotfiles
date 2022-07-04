@@ -30,14 +30,14 @@
 
 [colors]
 ;background = ${xrdb:color0:#222}
-background = #222
-background-alt = #444
+background = #aa000000
+background-alt = #aa444444
 ;foreground = ${xrdb:color7:#222}
-foreground = #dfdfdf
-foreground-alt = #ffffff
-primary = #ffb52a
-secondary = #e60053
-alert = #bd2c40
+foreground = #aadfdfdf
+foreground-alt = #aaffffff
+primary = #aaaab52a
+secondary = #aae60053
+alert = #aabd2c40
 
 [bar/example]
 monitor = ${env:MONITOR:}
@@ -45,7 +45,7 @@ width = 100%
 height = 32
 ;offset-x = 1%
 ;offset-y = 1%
-radius = 6.0
+radius = 8.0
 fixed-center = true
 
 background = ${colors.background}
@@ -56,7 +56,7 @@ line-color = #f00
 
 border-left-size = 8
 border-right-size = 8
-border-top-size = 8
+border-top-size = 6
 border-color = #00000000
 
 padding-left = 0
@@ -71,12 +71,13 @@ font-2 = Material Design Icons:pixelsize=14;1
 
 
 modules-left = i3 
-modules-center = xwindow
-modules-right = eth wlan xkeyboard temperature rofication-status battery date powermenu
+modules-center = date
+modules-right = eth wlan bluetooth xkeyboard temperature rofication-status battery powermenu
 
 tray-position = ${env:TRAY_POS:}
 tray-padding = 0
-;tray-background = #0063ff
+;tray-background = #aa0063ff
+
 
 ;wm-restack = i3
 
@@ -91,22 +92,23 @@ cursor-click = pointer
 [module/xwindow]
 type = internal/xwindow
 label = %title%
+laebl-maxln = 20
 
 [module/xkeyboard]
 type = internal/xkeyboard
 blacklist-0 = num lock
 
 format-prefix = " "
-format-prefix-foreground = #FFFFFF
-format-prefix-underline = ${colors.secondary}
+format-prefix-foreground = #aaFFFFFF
+;format-prefix-underline = ${colors.secondary}
 
 label-layout = %layout%
-label-layout-underline = ${colors.secondary}
+;label-layout-underline = ${colors.secondary}
 
 label-indicator-padding = 2
 label-indicator-margin = 1
 label-indicator-background = ${colors.secondary}
-label-indicator-underline = ${colors.secondary}
+;label-indicator-underline = ${colors.secondary}
 
 [module/wlan]
 type = internal/network
@@ -114,11 +116,11 @@ interface = wlp4s0
 interval = 3.0
 
 format-connected = <ramp-signal> <label-connected>
-format-connected-underline = #9f78e1
+;format-connected-underline = #9f78e1
 label-connected = %essid%
 
-format-disconnected =
-;format-disconnected = <label-disconnected>
+;format-disconnected =
+format-disconnected = <label-disconnected>
 ;format-disconnected-underline = ${self.format-connected-underline}
 ;label-disconnected = %ifname% disconnected
 ;label-disconnected-foreground = ${colors.foreground-alt}
@@ -135,7 +137,7 @@ type = internal/network
 interface = enp3s0
 interval = 3.0
 
-format-connected-underline = #55aa55
+;format-connected-underline = #55aa55
 format-connected-prefix = " "
 format-connected-prefix-foreground = ${colors.foreground-alt}
 label-connected = %local_ip%
@@ -156,11 +158,11 @@ date-alt = " %Y-%m-%d"
 time = %H:%M
 time-alt = %H:%M:%S
 
-format-prefix = 
+;format-prefix = 
 format-prefix-foreground = ${colors.foreground-alt}
-format-underline = #0a6cf5
+;format-underline = #0a6cf5
 
-label = %date% %time%
+label = %date%  %time%
 
 [module/battery]
 type = internal/battery
@@ -169,32 +171,32 @@ adapter = AC
 full-at = 98
 
 format-charging = <animation-charging> <label-charging>
-format-charging-underline = #ffb52a
+;format-charging-underline = #aaffb52a
 
 format-discharging = <animation-discharging> <label-discharging>
-format-discharging-underline = ${self.format-charging-underline}
+;format-discharging-underline = ${self.format-charging-underline}
 
 format-full-prefix = " "
 format-full-prefix-foreground = ${colors.foreground-alt}
-format-full-underline = ${self.format-charging-underline}
+;format-full-underline = ${self.format-charging-underline}
 
 ramp-capacity-0 = 
 ramp-capacity-1 = 
 ramp-capacity-2 = 
-ramp-capacity-foreground = #FFFFFF
+ramp-capacity-foreground = #aaFFFFFF
 
 animation-charging-0 = 
 animation-charging-1 = 
 animation-charging-2 = 
 animation-charging-3 = 
-animation-charging-foreground = #FFFFFF
+animation-charging-foreground = #aaFFFFFF
 animation-charging-framerate = 750
 
 animation-discharging-0 = 
 animation-discharging-1 = 
 animation-discharging-2 = 
 animation-discharging-3 = 
-animation-discharging-foreground = #FFFFFF
+animation-discharging-foreground = #aaFFFFFF
 animation-discharging-framerate = 750
 
 [module/temperature]
@@ -203,9 +205,9 @@ thermal-zone = 0
 warn-temperature = 60
 
 format = <ramp> <label>
-format-underline = #f50a4d
+;format-underline = #aaf50a4d
 format-warn = <ramp> <label-warn>
-format-warn-underline = ${self.format-underline}
+;format-warn-underline = ${self.format-underline}
 
 label = %temperature-c%
 label-warn = %temperature-c%
@@ -255,7 +257,7 @@ screenchange-reload = true
 
 [module/i3]
 type = internal/i3
-format = <label-state> <label-mode>
+format = <label-mode> <label-state> 
 index-sort = true
 wrapping-scroll = false
 strip-wsnumbers = false
@@ -265,29 +267,29 @@ strip-wsnumbers = false
 pin-workspaces = true
 
 label-mode-padding = 2
-label-mode-foreground = #000
+label-mode-foreground = #aa000000
 label-mode-background = ${colors.primary}
 
 ; focused = Active workspace on focused monitor
 label-focused = %name%
-label-focused-background = ${colors.background-alt}
-label-focused-underline= ${colors.primary}
-label-focused-padding = 8
+label-focused-background = ${colors.secondary}
+;label-focused-underline= ${colors.primary}
+label-focused-padding = 6
 
 ; unfocused = Inactive workspace on any monitor
 label-unfocused = %index%
-label-unfocused-padding = 8
+label-unfocused-padding = 6
 
 ; visible = Active workspace on unfocused monitor
 label-visible = %index%
 label-visible-background = ${self.label-focused-background}
-label-visible-underline = ${self.label-focused-underline}
+;label-visible-underline = ${self.label-focused-underline}
 label-visible-padding = ${self.label-focused-padding}
 
 ; urgent = Workspace with urgency hint set
 label-urgent = %index%
 label-urgent-background = ${colors.alert}
-label-urgent-padding = 8
+label-urgent-padding = 6
 
 ; Separator in between workspaces
 ; label-separator = |
@@ -296,10 +298,16 @@ label-urgent-padding = 8
 type = custom/script
 exec = ~/.config/polybar/scripts/rofication.sh
 click-left = ~/.config/polybar/scripts/rofication.sh --show &
-format-underline = #80e27e
+;format-underline = #aa80e27e
+
+[module/bluetooth]
+type = custom/script
+exec =  ~/.config/polybar/scripts/rofi-bluetooth/rofi-bluetooth --status
+interval = 1
+click-left = ~/.config/polybar/scripts/rofi-bluetooth/rofi-bluetooth &
 
 [global/wm]
-margin-top = 5
+margin-top = 3
 margin-bottom = 0
 
 ; vim:ft=dosini

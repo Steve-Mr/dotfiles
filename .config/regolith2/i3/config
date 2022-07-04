@@ -372,6 +372,8 @@ font $i3-wm.font
 # Include any user i3 partials
 include $HOME/.config/regolith2/i3/config.d/*
 
+focus_follows_mouse yes
+
 exec_always --no-startup-id autotiling
 exec_always --no-startup-id nitrogen --restore
 exec_always --no-startup-id /home/maary/.config/polybar/launch.sh
