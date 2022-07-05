@@ -33,7 +33,7 @@
 background = #aa000000
 background-alt = #aa444444
 ;foreground = ${xrdb:color7:#222}
-foreground = #aadfdfdf
+foreground = #ffffff
 foreground-alt = #aaffffff
 primary = #aaaab52a
 secondary = #aae60053
@@ -99,7 +99,7 @@ type = internal/xkeyboard
 blacklist-0 = num lock
 
 format-prefix = " "
-format-prefix-foreground = #aaFFFFFF
+format-prefix-foreground = #FFFFFF
 ;format-prefix-underline = ${colors.secondary}
 
 label-layout = %layout%
@@ -130,7 +130,7 @@ ramp-signal-1 = 
 ramp-signal-2 = 
 ramp-signal-3 = 
 ramp-signal-4 = 
-ramp-signal-foreground = ${colors.foreground-alt}
+ramp-signal-foreground = ${colors.foreground}
 
 [module/eth]
 type = internal/network
@@ -177,26 +177,26 @@ format-discharging = <animation-discharging> <label-discharging>
 ;format-discharging-underline = ${self.format-charging-underline}
 
 format-full-prefix = " "
-format-full-prefix-foreground = ${colors.foreground-alt}
+format-full-prefix-foreground = ${colors.foreground}
 ;format-full-underline = ${self.format-charging-underline}
 
 ramp-capacity-0 = 
 ramp-capacity-1 = 
 ramp-capacity-2 = 
-ramp-capacity-foreground = #aaFFFFFF
+ramp-capacity-foreground = #FFFFFF
 
 animation-charging-0 = 
 animation-charging-1 = 
 animation-charging-2 = 
 animation-charging-3 = 
-animation-charging-foreground = #aaFFFFFF
+animation-charging-foreground = #FFFFFF
 animation-charging-framerate = 750
 
 animation-discharging-0 = 
 animation-discharging-1 = 
 animation-discharging-2 = 
 animation-discharging-3 = 
-animation-discharging-foreground = #aaFFFFFF
+animation-discharging-foreground = #FFFFFF
 animation-discharging-framerate = 750
 
 [module/temperature]
@@ -216,7 +216,7 @@ label-warn-foreground = ${colors.secondary}
 ramp-0 =  
 ramp-1 =  
 ramp-2 =  
-ramp-foreground = ${colors.foreground-alt}
+ramp-foreground = ${colors.foreground}
 
 [module/powermenu]
 type = custom/menu
@@ -257,7 +257,7 @@ screenchange-reload = true
 
 [module/i3]
 type = internal/i3
-format = <label-mode> <label-state> 
+format = <label-mode><label-state> 
 index-sort = true
 wrapping-scroll = false
 strip-wsnumbers = false
