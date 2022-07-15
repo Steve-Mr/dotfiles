@@ -391,3 +391,5 @@ for_window [title="Qq"] floating enable
 
 for_window [title="Genymotion"] floating enable
 for_window [class="Genymotion"] border normal 0
+
+# for test
