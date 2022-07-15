@@ -385,4 +385,9 @@ for_window [title="^wemeetapp$"] floating enable
 
 for_window [title="flameshot"] floating enable
 
+for_window [class="kdeconnect"] floating enable
+
 for_window [title="Qq"] floating enable
+
+for_window [title="Genymotion"] floating enable
+for_window [class="Genymotion"] border normal 0
