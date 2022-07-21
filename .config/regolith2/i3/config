@@ -377,6 +377,8 @@ focus_follows_mouse yes
 exec_always --no-startup-id autotiling
 exec_always --no-startup-id nitrogen --restore
 exec_always --no-startup-id /home/maary/.config/polybar/launch.sh
+exec --no-startup-id nm-applet
+exec --no-startup-id /usr/lib/policykit-1-gnome/polkit-gnome-authentication-agent-1  
 
 assign [title="^Origin$"] → Origin
 for_window [title="^Origin$"] floating enable
@@ -392,4 +394,6 @@ for_window [title="Qq"] floating enable
 for_window [title="Genymotion"] floating enable
 for_window [class="Genymotion"] border normal 0
 
-# for test
+for_window [window_type="menu"] floating enable
+for_window [window_type="dialog"] floating enable
+

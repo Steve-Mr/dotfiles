@@ -72,22 +72,25 @@ font-2 = Material Design Icons:pixelsize=14;1
 
 modules-left = i3 
 modules-center = date
-modules-right = eth wlan bluetooth xkeyboard temperature rofication-status battery powermenu
+modules-right = eth wlan bluetooth xkeyboard temperature rofication-status battery
 
 tray-position = ${env:TRAY_POS:}
 tray-padding = 0
+;tray-offset-x = 128
 ;tray-background = #aa0063ff
 
 
 ;wm-restack = i3
 
-;override-redirect = true
+override-redirect = false
 
 scroll-up = i3wm-wsnext
 scroll-down = i3wm-wsprev
 
 cursor-click = pointer
 ;cursor-scroll = ns-resize
+
+enable-ipc = true
 
 [module/xwindow]
 type = internal/xwindow
@@ -305,6 +308,12 @@ type = custom/script
 exec =  ~/.config/polybar/scripts/rofi-bluetooth/rofi-bluetooth --status
 interval = 1
 click-left = ~/.config/polybar/scripts/rofi-bluetooth/rofi-bluetooth &
+
+[module/trayoffset]
+type = custom/script
+interval = 1.0
+exec = polybar_trayoffset echo
+format = <label>
 
 [global/wm]
 margin-top = 3

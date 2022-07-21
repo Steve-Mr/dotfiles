@@ -7,3 +7,6 @@
 [submodule ".config/polybar/scripts/rofi-bluetooth"]
 	path = .config/polybar/scripts/rofi-bluetooth
 	url = https://github.com/nickclyde/rofi-bluetooth.git
+[submodule ".config/polybar/scripts/polybar-dynamic-trayoffset"]
+	path = .config/polybar/scripts/polybar-dynamic-trayoffset
+	url = https://github.com/daltroaugusto/polybar-dynamic-trayoffset.git
