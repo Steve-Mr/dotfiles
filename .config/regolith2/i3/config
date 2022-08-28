@@ -379,11 +379,12 @@ exec_always --no-startup-id nitrogen --restore
 exec_always --no-startup-id /home/maary/.config/polybar/launch.sh
 exec --no-startup-id nm-applet
 exec --no-startup-id /usr/lib/policykit-1-gnome/polkit-gnome-authentication-agent-1  
+exec --no-startup-id /usr/lib/x86_64-linux-gn/libexec/kdeconnectd
 
 assign [title="^Origin$"] → Origin
 for_window [title="^Origin$"] floating enable
 
-for_window [title="^wemeetapp$"] floating enable
+for_window [class="^wemeetapp$"] floating enable
 
 for_window [title="flameshot"] floating enable
 
