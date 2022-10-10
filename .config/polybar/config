@@ -302,7 +302,6 @@ type = custom/script
 exec = ~/.config/polybar/scripts/rofication.sh
 click-left = ~/.config/polybar/scripts/rofication.sh --show &
 ;format-underline = #aa80e27e
-
 [module/bluetooth]
 type = custom/script
 exec =  ~/.config/polybar/scripts/rofi-bluetooth/rofi-bluetooth --status
