@@ -1,12 +1,15 @@
 [submodule "config/polybar/scripts/rofi-bluetooth"]
 	path = config/polybar/scripts/rofi-bluetooth
-	url = https://github.com/nickclyde/rofi-bluetooth.git
+	url = https://github.com/Steve-Mr/rofi-bluetooth.git
 [submodule ".config/regolith2/i3/i3lock-fancy-multimonitor"]
 	path = .config/regolith2/i3/i3lock-fancy-multimonitor
-	url = https://github.com/guimeira/i3lock-fancy-multimonitor.git
+	url = https://github.com/Steve-Mr/i3lock-fancy-multimonitor.git
 [submodule ".config/polybar/scripts/rofi-bluetooth"]
 	path = .config/polybar/scripts/rofi-bluetooth
-	url = https://github.com/nickclyde/rofi-bluetooth.git
+	url = https://github.com/Steve-Mr/rofi-bluetooth.git
 [submodule ".config/polybar/scripts/polybar-dynamic-trayoffset"]
 	path = .config/polybar/scripts/polybar-dynamic-trayoffset
-	url = https://github.com/daltroaugusto/polybar-dynamic-trayoffset.git
+	url = https://github.com/Steve-Mr/polybar-dynamic-trayoffset.git
+[submodule ".config/polybar/polybar-themes"]
+	path = .config/polybar/polybar-themes
+	url = https://github.com/Steve-Mr/polybar-themes.git
