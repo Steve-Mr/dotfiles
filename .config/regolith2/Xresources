@@ -1,1 +1,2 @@
-regolith.look.path: 
+!regolith.look.path: 
+regolith.look.path: /usr/share/regolith-look/default

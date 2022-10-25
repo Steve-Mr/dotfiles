@@ -5,6 +5,7 @@
 export ZSH="$HOME/.oh-my-zsh"
 
 export PATH="/opt/platform-tools:$PATH" 
+ export PATH="/home/maary/.local/bin:$PATH"
 
 source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 source /etc/profile

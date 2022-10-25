@@ -374,13 +374,6 @@ include $HOME/.config/regolith2/i3/config.d/*
 
 focus_follows_mouse yes
 
-exec_always --no-startup-id autotiling
-exec_always --no-startup-id nitrogen --restore
-exec_always --no-startup-id /home/maary/.config/polybar/launch.sh
-exec --no-startup-id nm-applet
-exec --no-startup-id /usr/lib/policykit-1-gnome/polkit-gnome-authentication-agent-1  
-exec --no-startup-id /usr/lib/x86_64-linux-gn/libexec/kdeconnectd
-
 assign [title="^Origin$"] → Origin
 for_window [title="^Origin$"] floating enable
 
@@ -398,3 +391,10 @@ for_window [class="Genymotion"] border normal 0
 for_window [window_type="menu"] floating enable
 for_window [window_type="dialog"] floating enable
 
+
+exec_always --no-startup-id autotiling
+exec_always --no-startup-id /home/maary/.config/polybar/launch.sh
+exec --no-startup-id nm-applet
+exec --no-startup-id /usr/lib/policykit-1-gnome/polkit-gnome-authentication-agent-1  
+exec --no-startup-id /usr/lib/x86_64-linux-gn/libexec/kdeconnectd
+exec_always --no-startup-id nitrogen --restore
