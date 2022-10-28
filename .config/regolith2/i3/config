@@ -379,6 +379,8 @@ for_window [title="^Origin$"] floating enable
 
 for_window [class="^wemeetapp$"] floating enable
 
+for_window [class="wechat.exe"] floating enable
+
 for_window [title="flameshot"] floating enable
 
 for_window [class="kdeconnect"] floating enable
