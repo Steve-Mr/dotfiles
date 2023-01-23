@@ -377,6 +377,8 @@ focus_follows_mouse yes
 assign [title="^Origin$"] → Origin
 for_window [title="^Origin$"] floating enable
 
+for_window [title="微信"] move to workspace 9
+
 for_window [class="^wemeetapp$"] floating enable
 
 for_window [class="wechat.exe"] floating enable

@@ -1,26 +1,27 @@
-set_from_resource $rofi.theme rofi.theme /home/maary/.config/rofi/files/launchers/type-1/style-4.rasi
+set_from_resource $rofi.theme rofi.theme ~/.config/rofi/launchers/type-1/style-4.rasi
+
 
 ## Launch // Application // <> Space ##
 set_from_resource $i3-wm.binding.launcher.app i3-wm.binding.launcher.app space
-set_from_resource $i3-wm.program.launcher.app i3-wm.program.launcher.app rofi -show drun -theme /home/maary/.config/rofi/files/launchers/type-1/style-4.rasi -icon-theme "Papirus" -show-icons 
+set_from_resource $i3-wm.program.launcher.app i3-wm.program.launcher.app rofi -show drun -theme /home/maary/.config/rofi/launchers/type-1/style-4.rasi -icon-theme "Papirus" -show-icons 
 bindsym $mod+$i3-wm.binding.launcher.app exec $i3-wm.program.launcher.app
 
 ## Launch // Command // <><Shift> Space ##
 set_from_resource $i3-wm.binding.launcher.cmd i3-wm.binding.launcher.cmd Shift+space
-set_from_resource $i3-wm.program.launcher.cmd i3-wm.program.launcher.cmd rofi -show run -icon-theme "Papirus" -show-icons -theme /home/maary/.config/rofi/files/launchers/type-1/style-4.rasi
+set_from_resource $i3-wm.program.launcher.cmd i3-wm.program.launcher.cmd rofi -show run -icon-theme "Papirus" -show-icons -theme ~/.config/rofi/launchers/type-1/style-4.rasi
 bindsym $mod+$i3-wm.binding.launcher.cmd exec $i3-wm.program.launcher.cmd
 
 ## Navigate // Window by Name // <><Ctrl> Space ##
 set_from_resource $i3-wm.binding.launcher.window i3-wm.binding.launcher.window Ctrl+space
-set_from_resource $i3-wm.program.launcher.window i3-wm.program.launcher.window rofi -show window -icon-theme "Papirus" -show-icons -theme /home/maary/.config/rofi/files/launchers/type-1/style-4.rasi`
+set_from_resource $i3-wm.program.launcher.window i3-wm.program.launcher.window rofi -show window -icon-theme "Papirus" -show-icons -theme ~/.config/rofi/launchers/type-1/style-4.rasi 
 bindsym $mod+$i3-wm.binding.launcher.window exec $i3-wm.program.launcher.window
 
 ## Launch // File Search // <><Alt> Space ##
 set_from_resource $i3-wm.binding.file_search i3-wm.binding.file_search space
-set_from_resource $i3-wm.program.file_search i3-wm.program.file_search rofi -show find -modi find:/usr/share/rofi/modi/finder.sh -icon-theme "Papirus" -show-icons -theme /home/maary/.config/rofi/files/launchers/type-1/style-4.rasi
+set_from_resource $i3-wm.program.file_search i3-wm.program.file_search rofi -show window -modi find:/usr/share/rofi/modi/finder.sh -icon-theme "Papirus" -show-icons -theme ~/.config/rofi/launchers/type-1/style-4.rasi 
 bindsym $mod+$alt+$i3-wm.binding.file_search exec $i3-wm.program.file_search
 
 ## Launch // Look Selector // <><Alt> l ##
 set_from_resource $i3-wm.binding.look_selector i3-wm.binding.look_selector l
-set_from_resource $i3-wm.program.look_selector i3-wm.program.look_selector rofi -show look -modi look:/usr/share/rofi/modi/look-selector.sh -icon-theme "Papirus" -show-icons -theme /home/maary/.config/rofi/files/launchers/type-1/style-4.rasi
+set_from_resource $i3-wm.program.look_selector i3-wm.program.look_selector rofi -show look -modi look:/usr/share/rofi/modi/look-selector.sh -icon-theme "Papirus" -show-icons -theme ~/.config/rofi/launchers/type-1/style-4.rasi 
 bindsym $mod+$alt+$i3-wm.binding.look_selector exec $i3-wm.program.look_selector
