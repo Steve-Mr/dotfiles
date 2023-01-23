@@ -17,7 +17,7 @@ bindsym $mod+$i3-wm.binding.launcher.window exec $i3-wm.program.launcher.window
 
 ## Launch // File Search // <><Alt> Space ##
 set_from_resource $i3-wm.binding.file_search i3-wm.binding.file_search space
-set_from_resource $i3-wm.program.file_search i3-wm.program.file_search rofi -show find -modi find:/usr/share/rofi/modi/finder.sh -icon-theme "Papirus" -show-icons -theme /home/maary/rofi/1080p/launchers/text/style_4.rasi
+set_from_resource $i3-wm.program.file_search i3-wm.program.file_search rofi -show window -modi find:/usr/share/rofi/modi/finder.sh -icon-theme "Papirus" -show-icons -theme /home/maary/rofi/1080p/launchers/text/style_4.rasi
 bindsym $mod+$alt+$i3-wm.binding.file_search exec $i3-wm.program.file_search
 
 ## Launch // Look Selector // <><Alt> l ##
