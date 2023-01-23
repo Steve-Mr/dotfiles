@@ -4,9 +4,9 @@ for_window [class="floating_window"] floating enable
 
 # Disable titlebar
 set_from_resource $i3-wm.floatingwindow.border.size i3-wm.floatingwindow.border.size 1
-default_floating_border none
+default_floating_border pixel 0
 set_from_resource $i3-wm.window.border.size i3-wm.window.border.size 
-default_border none
+default_border pixel 0
 
 # Enable popup during fullscreen
 set_from_resource $i3-wm.gaps.popup_during_fullscreen i3-wm.gaps.popup_during_fullscreen smart

@@ -9,7 +9,10 @@
 	url = https://github.com/Steve-Mr/rofi-bluetooth.git
 [submodule ".config/polybar/scripts/polybar-dynamic-trayoffset"]
 	path = .config/polybar/scripts/polybar-dynamic-trayoffset
-	url = https://github.com/Steve-Mr/polybar-dynamic-trayoffset.git
+	url = https://github.com/Steve-Mr/polybar-i3-dynamic-trayoffset.git
 [submodule ".config/polybar/polybar-themes"]
 	path = .config/polybar/polybar-themes
 	url = https://github.com/Steve-Mr/polybar-themes.git
+[submodule ".config/rofi"]
+	path = .config/rofi
+	url = https://github.com/adi1090x/rofi.git
