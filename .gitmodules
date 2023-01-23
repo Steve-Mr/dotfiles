@@ -1,5 +1,5 @@
-[submodule "config/polybar/scripts/rofi-bluetooth"]
-	path = config/polybar/scripts/rofi-bluetooth
+[submodule ".config/polybar/scripts/rofi-bluetooth"]
+	path = .config/polybar/scripts/rofi-bluetooth
 	url = https://github.com/Steve-Mr/rofi-bluetooth.git
 [submodule ".config/regolith2/i3/i3lock-fancy-multimonitor"]
 	path = .config/regolith2/i3/i3lock-fancy-multimonitor
@@ -13,3 +13,6 @@
 [submodule ".config/polybar/polybar-themes"]
 	path = .config/polybar/polybar-themes
 	url = https://github.com/Steve-Mr/polybar-themes.git
+[submodule "Build/rofi"]
+	path = Build/rofi
+	url = https://github.com/adi1090x/rofi.git
