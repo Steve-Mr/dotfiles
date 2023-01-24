@@ -49,3 +49,12 @@ bindsym $mod+$i3-wm.binding.lock exec $i3-wm.program.lock
 set_from_resource $i3-wm.binding.sleep i3-wm.binding.sleep Shift+s
 set_from_resource $i3-wm.program.sleep i3-wm.program.sleep /home/maary/.config/regolith2/i3/i3lock-fancy-multimonitor/lock
 bindsym $mod+$i3-wm.binding.sleep exec $i3-wm.program.sleep
+
+# Make the currently focused window a scratchpad
+bindsym $mod+h move scratchpad
+
+# Show the first scratchpad window
+bindsym $mod+Shift+h scratchpad show
+
+bindsym $mod+Shift+Ctrl+h [title="^Sup ::"] scratchpad show
+
