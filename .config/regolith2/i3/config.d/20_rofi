@@ -17,9 +17,9 @@ set_from_resource $i3-wm.program.launcher.window i3-wm.program.launcher.window r
 bindsym $mod+$i3-wm.binding.launcher.window exec $i3-wm.program.launcher.window
 
 ## Launch // StrachPad list // <><Alt> Space ##
-set_from_resource $i3-wm.binding.file_search i3-wm.binding.file_search space
+set_from_resource $i3-wm.binding.file_search i3-wm.binding.file_search Tab
 set_from_resource $i3-wm.program.file_search i3-wm.program.file_search i3-scratch-list -noid  | rofi -dmenu -i  -p "Scratchpad" -icon-theme "Papirus" -theme ~/.config/rofi/launchers/type-1/style-2.rasi  | xargs -i{} i3-msg "[title=\""{}"\"] scratchpad show"
-bindsym $mod+$alt+$i3-wm.binding.file_search exec $i3-wm.program.file_search
+bindsym Ctrl+$i3-wm.binding.file_search exec $i3-wm.program.file_search
 
 
 ## Launch // Look Selector // <><Alt> l ##

@@ -25,19 +25,19 @@ bindsym $mod+$i3-wm.binding.restart restart
 
 ## Session // Logout // <><Shift> e ##
 set_from_resource $i3-wm.binding.logout i3-wm.binding.logout Shift+e
-set_from_resource $i3-wm.program.logout exec polybar-msg cmd hide; exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.'  -B 'No' 'polybar-msg cmd show' -B 'Yes, exit i3' 'i3-msg exit'"
+set_from_resource $i3-wm.program.logout exec ~/.config/rofi/powermenu/type-1/powermenu.sh
 ## i3-wm.program.logout /usr/bin/gnome-session-quit --logout
 bindsym $mod+$i3-wm.binding.logout exec $i3-wm.program.logout
 
 ## Session // Reboot // <><Shift> b ##
 set_from_resource $i3-wm.binding.reboot i3-wm.binding.reboot Shift+b
-set_from_resource $i3-wm.program.reboot i3-wm.program.reboot exec polybar-msg cmd hide; exec "i3-nagbar -t warning -m 'You pressed the reboot shortcut. Do you really want to reboot?'  -B 'Yes, reboot' 'systemctl reboot -i'"
+set_from_resource $i3-wm.program.reboot i3-wm.program.reboot exec ~/.config/rofi/powermenu/type-1/powermenu.sh
 bindsym $mod+$i3-wm.binding.reboot exec $i3-wm.program.reboot
 
 ## Session // Power Down // <><Shift> p ##
 set_from_resource $i3-wm.binding.shutdown i3-wm.binding.shutdown Shift+p
 ## set_from_resource $i3-wm.program.shutdown i3-wm.program.shutdown /usr/bin/gnome-session-quit --power-off
-set_from_resource $i3-wm.program.shutdown i3-wm.program.shutdown exec polybar-msg cmd hide; exec "i3-nagbar -t warning -m 'You pressed the shutdown shortcut. Do you really want to shutdown?'  -B 'Yes, shutdown' 'systemctl poweroff -i'"
+set_from_resource $i3-wm.program.shutdown i3-wm.program.shutdown exec ~/.config/rofi/powermenu/type-1/powermenu.sh
 bindsym $mod+$i3-wm.binding.shutdown exec $i3-wm.program.shutdown
 
 ## Session // Lock Screen // <> Escape ##
@@ -51,10 +51,10 @@ set_from_resource $i3-wm.program.sleep i3-wm.program.sleep /home/maary/.config/r
 bindsym $mod+$i3-wm.binding.sleep exec $i3-wm.program.sleep
 
 # Make the currently focused window a scratchpad
-bindsym $mod+h move scratchpad
+bindsym $mod+h scratchpad show
 
 # Show the first scratchpad window
-bindsym $mod+Shift+h scratchpad show
+bindsym $mod+Shift+h move scratchpad
 
 bindsym $mod+Shift+Ctrl+h [title="^Sup ::"] scratchpad show
 

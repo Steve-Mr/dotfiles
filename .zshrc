@@ -1,10 +1,11 @@
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
+export PATH=~/.local/share/platform-tools/:$PATH
+
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
 
-export PATH="/opt/platform-tools:$PATH" 
  export PATH="/home/maary/.local/bin:$PATH"
 
 source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh

@@ -84,6 +84,7 @@ shadow-exclude = [
     "name *= 'cpt_frame_window'",
     "name *= 'cpt_frame_xcb_window'",
     "name *= 'wrapper-2.0'",
+    "name *= '微信'",
     "class_g = 'Conky'",
     "class_g = 'Kupfer'",
     "class_g = 'Synapse'",
@@ -92,6 +93,10 @@ shadow-exclude = [
     "class_g = 'firefox' && argb",
     "class_g = 'FFPWA-01G4X6W1AMVG9KSKJ2968YR7KV' && argb",
     "class_g = 'Polybar'",
+    "class_g = 'wechat.exe'",
+    "class_i = 'wechat.exe'",
+    "class_g = 'Wine'",
+    "class_i = 'Wine'",
     "_GTK_FRAME_EXTENTS@:c",
     "_NET_WM_STATE@:32a *= '_NET_WM_STATE_HIDDEN'"
 ];
