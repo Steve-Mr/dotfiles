@@ -396,6 +396,7 @@ for_window [window_type="menu"] floating enable
 for_window [window_type="dialog"] floating enable
 
 exec_always --no-startup-id numlockx on
+exec_always --no-startup-id dunst -config ~/Build/dunst/src/mocha.conf
 exec_always --no-startup-id /usr/bin/scratchpad_indicator.py
 exec_always --no-startup-id autotiling
 exec_always --no-startup-id nitrogen --restore
