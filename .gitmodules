@@ -19,3 +19,6 @@
 [submodule ".config/nvim"]
 	path = .config/nvim
 	url = https://github.com/LazyVim/starter
+[submodule ".local/share/fcitx5/themes/Psionics-Remix"]
+	path = .local/share/fcitx5/themes/Psionics-Remix
+	url = https://github.com/xTpx/Psionics-Remix.git
