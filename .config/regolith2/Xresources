@@ -14,3 +14,4 @@ i3-wm.workspace.10.name:0
 gtk.icon_theme_name:Papirus-Dark
 i3-wm.floatingwindow.border.size:0
 i3-wm.window.border.size:0
+gnome.terminal.update: false

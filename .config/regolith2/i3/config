@@ -48,7 +48,8 @@ set_from_resource $alt  i3-wm.alt Mod1
 
 ## Launch // Terminal // <> Enter ##
 set_from_resource $i3-wm.binding.terminal i3-wm.binding.terminal Return
-bindsym $mod+$i3-wm.binding.terminal exec /usr/bin/x-terminal-emulator
+# bindsym $mod+$i3-wm.binding.terminal exec /usr/bin/x-terminal-emulator
+bindsym $mod+$i3-wm.binding.terminal exec cool-retro-term
 
 ## Launch // Browser // <><Shift> Enter ##
 set_from_resource $i3-wm.binding.browser i3-wm.binding.browser Shift+Return
