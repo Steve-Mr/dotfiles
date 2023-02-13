@@ -1,0 +1,30 @@
+#proxy-groups:
+#  - name: OFFICE
+#    type: select
+#    proxies:
+#      - office-router
+  - 
+    name: '🚀 ChatGPT'
+    type: select
+    proxies:
+      - '🇩🇪 德国 01 GIA CN2（1.9倍率）'
+      - '🇩🇪 德国 03 Cogent/Tata IPv6'
+      - '🇯🇵 日本 01 电信/沪日专线（3倍率）'
+      - '🇯🇵 日本 02 电信/沪日专线（3倍率）'
+      - '🇯🇵 日本 05 NTT IPv6'
+      - '🇯🇵 日本 06 M247 IPv6'
+      - '🇯🇵 日本 07 IIJ'
+      - '🇯🇵 日本 09 IIJ'
+      - '🇯🇵 日本 11 IIJ IPv6'
+      - '🇯🇵 日本 13 IIJ IPv6'
+      - '🇯🇵 日本 15 IIJ'
+      - '🇯🇵 日本 17 IIJ'
+      - '🇯🇵 日本 19 IIJ'
+      - '🇯🇵 日本 21 NTT'
+      - '🇦🇺 澳大利亚 01 NTT IPv6'
+      - '🇺🇲 美国 01 GIA CN2 IPv6'
+      - '🇺🇲 美国 03 GIA CN2 IPv6'
+      - '🇺🇲 美国 05 Cogent IPv6（流媒体）'
+      - '🇬🇧 英国 01 NTT/GTT'
+      - '🇰🇷 韩国 01 SK（2.7倍率）'
+
