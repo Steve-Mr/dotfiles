@@ -398,6 +398,7 @@ for_window [window_type="dialog"] floating enable
 
 exec --no-startup-id "picom --config ~/.config/regolith2/picom/config"
 exec_always --no-startup-id numlockx on
+exec_always --no-startup-id killall oneko; oneko -tofocus -idle 1000 -nocursor -fixrootcursor
 exec_always --no-startup-id dunst -config ~/Build/dunst/src/mocha.conf
 # exec_always --no-startup-id /usr/bin/scratchpad_indicator.py
 exec_always --no-startup-id autotiling
