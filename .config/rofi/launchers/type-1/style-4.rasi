@@ -17,6 +17,7 @@ configuration {
     display-window:             "";
 	drun-display-format:        "{name}";
 	window-format:              "{w} · {c} · {t}";
+	combi-hide-mode-prefix: true;
 }
 
 /*****----- Global Properties -----*****/
