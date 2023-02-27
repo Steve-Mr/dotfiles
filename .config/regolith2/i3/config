@@ -388,6 +388,8 @@ for_window [title="flameshot"] floating enable
 
 for_window [class="kdeconnect"] floating enable
 
+for_window [class="Pycalendar.py"] floating enable
+
 for_window [title="Qq"] floating enable
 
 for_window [title="Genymotion"] floating enable
