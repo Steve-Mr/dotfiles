@@ -51,10 +51,11 @@ set_from_resource $i3-wm.program.sleep i3-wm.program.sleep /home/maary/.config/r
 bindsym $mod+$i3-wm.binding.sleep exec $i3-wm.program.sleep
 
 # Make the currently focused window a scratchpad
-bindsym $mod+h scratchpad show
+# bindsym $mod+h scratchpad show
+bindsym $mod+h move scratchpad
 
 # Show the first scratchpad window
-bindsym $mod+Shift+h move scratchpad
+# bindsym $mod+Shift+h move scratchpad
 
 bindsym $mod+Shift+Ctrl+h [title="^Sup ::"] scratchpad show
 
