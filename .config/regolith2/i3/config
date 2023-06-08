@@ -227,8 +227,8 @@ bindsym $mod+$i3-wm.binding.move_workspace_output_down move workspace to output 
 # bindsym $mod+$i3-wm.binding.split_v split vertical
 
 ## Modify // Horizontal Window Orientation // <> g ##
-set_from_resource $i3-wm.binding.split_h i3-wm.binding.split_h g
-bindsym $mod+$i3-wm.binding.split_h split horizontal
+set_from_resource $i3-wm.albert i3-wm.albert g
+bindsym $mod+$i3-wm.albert exec "albert toggle"
 
 ## Modify // Toggle Window Orientation // <> Backspace ##
 set_from_resource $i3-wm.binding.orientation_toggle i3-wm.binding.orientation_toggle BackSpace
