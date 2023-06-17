@@ -119,3 +119,6 @@ export NVM_DIR="$HOME/.nvm"
 # Install Ruby Gems to ~/gems
 export GEM_HOME="$HOME/gems"
 export PATH="$HOME/gems/bin:$PATH"
+source /opt/ros/humble/setup.zsh
+
+export GAZEBO_MODEL_PATH=$GAZEBO_MODEL_PATH:/home/maary/Build/ws/src/basic_mobile_robot/models/
