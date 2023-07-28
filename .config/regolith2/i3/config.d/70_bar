@@ -5,7 +5,7 @@
 # Toggle bar visibility
 ## Modify // Toggle Bar // <> i ##
 set_from_resource $i3-wm.binding.bar_toggle i3-wm.binding.bar_toggle i
-bindsym $mod+$i3-wm.binding.bar_toggle exec polybar-msg cmd show
+bindsym $mod+$i3-wm.binding.bar_toggle exec polybar-msg cmd toggle
 
 set_from_resource $i3-wm.bar.position i3-wm.bar.position bottom
 set_from_resource $i3-wm.bar.font i3-wm.bar.font pango: SauceCodePro Nerd Font Mono 13

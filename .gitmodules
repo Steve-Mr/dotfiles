@@ -25,3 +25,6 @@
 [submodule ".config/polybar/scripts/polybar-calendar"]
 	path = .config/polybar/scripts/polybar-calendar
 	url = https://github.com/nevarman/polybar-calendar
+[submodule ".config/polybar/scripts/polybar-weather"]
+	path = .config/polybar/scripts/polybar-weather
+	url = https://github.com/Steve-Mr/weather-polybar-plugin.git
