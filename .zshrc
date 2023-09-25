@@ -122,3 +122,19 @@ export PATH="$HOME/gems/bin:$PATH"
 source /opt/ros/humble/setup.zsh
 
 export GAZEBO_MODEL_PATH=$GAZEBO_MODEL_PATH:/home/maary/Build/ws/src/basic_mobile_robot/models/
+
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('/home/maary/anaconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/home/maary/anaconda3/etc/profile.d/conda.sh" ]; then
+        . "/home/maary/anaconda3/etc/profile.d/conda.sh"
+    else
+        export PATH="/home/maary/anaconda3/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+# <<< conda initialize <<<
+
