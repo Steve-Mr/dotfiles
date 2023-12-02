@@ -373,6 +373,8 @@ font $i3-wm.font
 # Include any user i3 partials
 include $HOME/.config/regolith2/i3/config.d/*
 
+bindsym $mod+n exec $HOME/.config/regolith2/i3/scripts/create_note.sh
+
 focus_follows_mouse yes
 
 assign [title="^Origin$"] → Origin
@@ -401,6 +403,9 @@ for_window [class="Genymotion"] border normal 0
 
 for_window [window_type="menu"] floating enable
 for_window [window_type="dialog"] floating enable
+
+for_window [class="Abricotine"] floating enable
+
 
 exec_always --no-startup-id killall picom; picom
 exec_always --no-startup-id numlockx on
