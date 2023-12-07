@@ -404,7 +404,7 @@ for_window [class="Genymotion"] border normal 0
 for_window [window_type="menu"] floating enable
 for_window [window_type="dialog"] floating enable
 
-for_window [class="Abricotine"] floating enable
+for_window [class="ghostwriter"] floating enable
 
 
 exec_always --no-startup-id killall picom; picom
