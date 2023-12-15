@@ -11,5 +11,5 @@ if [ ! -f "$filename" ]; then
 fi
 
 # 使用 Ghostwriter 以 float 模式打开新建的文件
-ghostwriter --platformtheme qt5ct "$filename"
+marktext "$filename"
 
