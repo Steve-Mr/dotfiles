@@ -114,16 +114,6 @@ bindsym $mod+Down focus down
 bindsym $mod+Up focus up
 bindsym $mod+Right focus right
 
-## Navigate // Relative Window // <> k j h l ##
-# set_from_resource $i3-wm.binding.left i3-wm.binding.left h
-# set_from_resource $i3-wm.binding.right i3-wm.binding.right l
-# set_from_resource $i3-wm.binding.up i3-wm.binding.up k
-# set_from_resource $i3-wm.binding.down i3-wm.binding.down j
-# bindsym $mod+$i3-wm.binding.left focus left
-# bindsym $mod+$i3-wm.binding.down focus down
-# bindsym $mod+$i3-wm.binding.up focus up
-# bindsym $mod+$i3-wm.binding.right focus right
-
 ## Navigate // Workspaces 1-10 // <> 0..9 ##
 bindsym $mod+$ws1_key workspace number $ws1
 bindsym $mod+$ws2_key workspace number $ws2
@@ -192,16 +182,6 @@ bindsym $mod+Shift+Down move down
 bindsym $mod+Shift+Up move up
 bindsym $mod+Shift+Right move right
 
-## Modify // Window Position // <><Shift> k j h l ##
-# set_from_resource $i3-wm.binding.move_left i3-wm.binding.move_left Shift+h
-# set_from_resource $i3-wm.binding.move_right i3-wm.binding.move_right Shift+l
-# set_from_resource $i3-wm.binding.move_up i3-wm.binding.move_up Shift+k
-# set_from_resource $i3-wm.binding.move_down i3-wm.binding.move_down Shift+j
-# bindsym $mod+$i3-wm.binding.move_left move left
-# bindsym $mod+$i3-wm.binding.move_down move down
-# bindsym $mod+$i3-wm.binding.move_up move up
-# bindsym $mod+$i3-wm.binding.move_right move right
-
 ## Modify // Containing Workspace // <><Ctrl><Shift> ↑ ↓ ← → ##
 set_from_resource $i3-wm.binding.move_workspace_output_left i3-wm.binding.move_workspace_output_left Ctrl+Shift+Left
 set_from_resource $i3-wm.binding.move_workspace_output_right i3-wm.binding.move_workspace_output_right Ctrl+Shift+Right
@@ -212,19 +192,6 @@ bindsym $mod+$i3-wm.binding.move_workspace_output_right move workspace to output
 bindsym $mod+$i3-wm.binding.move_workspace_output_up move workspace to output up
 bindsym $mod+$i3-wm.binding.move_workspace_output_down move workspace to output down
 
-## Modify // Containing Workspace // <><Ctrl><Shift> k j h l ##
-# set_from_resource $i3-wm.binding.take_left i3-wm.binding.take_left Ctrl+Shift+h
-# set_from_resource $i3-wm.binding.take_right i3-wm.binding.take_right Ctrl+Shift+l
-# set_from_resource $i3-wm.binding.take_up i3-wm.binding.take_up Ctrl+Shift+k
-# set_from_resource $i3-wm.binding.take_down i3-wm.binding.take_down Ctrl+Shift+j
-# bindsym $mod+$i3-wm.binding.take_left move workspace to output left
-# bindsym $mod+$i3-wm.binding.take_down move workspace to output down
-# bindsym $mod+$i3-wm.binding.take_up move workspace to output up
-# bindsym $mod+$i3-wm.binding.take_right move workspace to output right
-
-## Modify // Vertical Window Orientation // <> v ##
-# set_from_resource $i3-wm.binding.split_v i3-wm.binding.split_v v
-# bindsym $mod+$i3-wm.binding.split_v split vertical
 
 ## Modify // Horizontal Window Orientation // <> g ##
 set_from_resource $i3-wm.albert i3-wm.albert g
@@ -242,9 +209,16 @@ bindsym $mod+$i3-wm.binding.fullscreen_toggle fullscreen toggle
 set_from_resource $i3-wm.binding.float_toggle i3-wm.binding.float_toggle Shift+f
 bindsym $mod+Shift+$i3-wm.binding.float_toggle floating toggle
 
+## Modify // Window DualScreen Fullscreen Toggle // <><Ctrl> f ##
+set_from_resource $i3-wm.binding.fullscreen_toggle_global i3-wm.binding.fullscreen_toggle_global Ctrl+f
+bindsym $mod+$i3-wm.binding.fullscreen_toggle_global fullscreen toggle global
+
 ## Modify // Move to Scratchpad // <><Ctrl> m ##
 set_from_resource $i3-wm.binding.move_scratchpad i3-wm.binding.move_scratchpad Ctrl+m
 bindsym $mod+$i3-wm.binding.move_scratchpad move to scratchpad
+
+set_from_resource $i3-wm.binding.window_screenshot i3-wm.binding.window_screenshot m
+bindsym $mod+$i3-wm.binding.window_screenshot exec "maim -st 9999999 | convert - \( +clone -background black -shadow 80x3+5+5 \) +swap -background none -layers merge +repage ~/Pictures/Screenshots/maim/$(date +%s).png"
 
 ## Modify // Tile/Float Focus Toggle // <><Shift> t ##
 set_from_resource $i3-wm.binding.focus_toggle i3-wm.binding.focus_toggle Shift+t
@@ -404,7 +378,7 @@ for_window [class="Genymotion"] border normal 0
 for_window [window_type="menu"] floating enable
 for_window [window_type="dialog"] floating enable
 
-for_window [class="marktext"] floating enable
+for_window [class="SGLOH_opencv"] floating enable
 
 
 exec_always --no-startup-id killall picom; picom
