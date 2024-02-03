@@ -14,13 +14,13 @@
 # without having to make a copy of this config file.
 # The benefit to not copying this file is easier upgrades in the future.
 # To update a value in this config without making a copy, update the Xresource
-# value in the file ~/.config/regolith2/Xresources.
+# value in the file ~/.config/regolith3/Xresources.
 #
 # For example, to change the bar position to the top of the screen this is the
 # i3 config entry in this file:
 # set_from_resource $i3-wm.bar.position i3-wm.bar.position bottom
 #
-# So add this line to ~/.config/regolith2/Xresources to change it's value:
+# So add this line to ~/.config/regolith3/Xresources to change it's value:
 # i3-wm.bar.position: top
 #
 # Reload i3 after making Xresource changes.  Learn more at
@@ -345,9 +345,9 @@ font $i3-wm.font
 # include /usr/share/regolith/i3/config.d/*
 
 # Include any user i3 partials
-include $HOME/.config/regolith2/i3/config.d/*
+include $HOME/.config/regolith3/i3/config.d/*
 
-bindsym $mod+n exec $HOME/.config/regolith2/i3/scripts/create_note.sh
+bindsym $mod+n exec $HOME/.config/regolith3/i3/scripts/create_note.sh
 
 focus_follows_mouse yes
 
@@ -380,8 +380,11 @@ for_window [window_type="dialog"] floating enable
 
 for_window [class="SGLOH_opencv"] floating enable
 
+# Start the installed regolith-compositor
+set_from_resource $wm.program.compositor wm.program.compositor /usr/share/regolith-compositor/init
+exec_always --no-startup-id $wm.program.compositor
 
-exec_always --no-startup-id killall picom; picom
+# exec_always --no-startup-id killall picom; picom
 exec_always --no-startup-id numlockx on
 # exec_always --no-startup-id killall oneko; oneko -tofocus -idle 1000 -nocursor -fixrootcursor
 exec_always --no-startup-id dunst -config ~/Build/dunst/src/mocha.conf
@@ -395,4 +398,4 @@ exec_always --no-startup-id /usr/bin/gnome-keyring-daemon --start --components=s
 exec_always /usr/lib/policykit-1-gnome/polkit-gnome-authentication-agent-1  
 exec --no-startup-id /usr/lib/x86_64-linux-gn/libexec/kdeconnectd
 exec_always --no-startup-id nitrogen --restore
-# exec_always --no-startup-id /home/maary/.config/regolith2/i3/scripts/vwallpaper.sh
+# exec_always --no-startup-id /home/maary/.config/regolith3/i3/scripts/vwallpaper.sh
