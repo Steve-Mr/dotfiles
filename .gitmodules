@@ -28,3 +28,6 @@
 [submodule ".config/polybar/scripts/polybar-weather"]
 	path = .config/polybar/scripts/polybar-weather
 	url = https://github.com/Steve-Mr/weather-polybar-plugin.git
+[submodule ".config/regolith3/i3/mantablockscreen"]
+	path = .config/regolith3/i3/mantablockscreen
+	url = https://github.com/reorr/mantablockscreen

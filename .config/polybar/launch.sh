@@ -1,6 +1,6 @@
 #!/bin/bash              
 
-DIR="$HOME/.config/polybar/polybar-themes/simple/material"                                                         
+DIR="$HOME/.config/polybar/polybar-themes/simple/colorblocks"                                                         
 
 # Terminate already running bars                                                   
 killall -q polybar                                                                 

@@ -381,17 +381,18 @@ for_window [window_type="dialog"] floating enable
 for_window [class="SGLOH_opencv"] floating enable
 
 # Start the installed regolith-compositor
-set_from_resource $wm.program.compositor wm.program.compositor /usr/share/regolith-compositor/init
-exec_always --no-startup-id $wm.program.compositor
+# set_from_resource $wm.program.compositor wm.program.compositor /usr/share/regolith-compositor/init
+# exec_always --no-startup-id $wm.program.compositor
 
-# exec_always --no-startup-id killall picom; picom
+exec_always --no-startup-id /home/maary/.config/polybar/launch.sh
+exec_always --no-startup-id killall picom; picom --respect-prop-shadow 
 exec_always --no-startup-id numlockx on
 # exec_always --no-startup-id killall oneko; oneko -tofocus -idle 1000 -nocursor -fixrootcursor
 exec_always --no-startup-id dunst -config ~/Build/dunst/src/mocha.conf
 # exec_always --no-startup-id /usr/bin/scratchpad_indicator.py
 exec_always --no-startup-id autotiling
 exec_always --no-startup-id nitrogen --restore
-exec_always --no-startup-id /home/maary/.config/polybar/launch.sh
+
 exec --no-startup-id nm-applet
 exec_always --no-startup-id /usr/bin/gnome-keyring-daemon --start --components=ssh,secrets,pkcs11
 

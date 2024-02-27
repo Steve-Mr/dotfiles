@@ -15,3 +15,4 @@ gtk.icon_theme_name:Papirus-Dark
 wm.floatingwindow.border.size:0
 wm.window.border.size:0
 gnome.terminal.update: false
+regolith.sway.unsupported_gpu: true
