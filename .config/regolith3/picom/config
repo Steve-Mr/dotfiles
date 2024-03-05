@@ -91,12 +91,16 @@ shadow-exclude = [
     "class_g = 'wechat.exe'",
     "class_i = 'wechat.exe'",
     "class_g = 'Wine'",
+    "class_g = 'Rofi'",
+    "class_i = 'rofi'",
     "class_i = 'Wine'",
     "class_g = 'Conky'",
     "class_g = 'Kupfer'",
+    "class_g = 'flameshot'",
     "class_g = 'Synapse'",
     "class_g ?= 'Notify-osd'",
     "class_g ?= 'Cairo-dock'",
+    "class_g ?= 'wemeetapp'",
     "_GTK_FRAME_EXTENTS@:c",
     "_NET_WM_STATE@:32a *= '_NET_WM_STATE_HIDDEN'"
 ];
@@ -129,11 +133,12 @@ blur-background-exclude = [
     "window_type = 'desktop'"
 ];
 
-opacity-rule = ["10:name = 'i3lock'",
+opacity-rule = ["100:name = 'i3lock'",
 "100:name %= '*- YouTube*'",
 "100:name %= '*哔哩哔哩_bilibili*'",
 "100:name %= '*哔哩哔哩直播*'",
-"100:name %= '画中画'"]
+"100:name %= '画中画'",
+"100:class_g %= 'scrcpy'"]
 
 #################################
 #
@@ -188,7 +193,7 @@ dbe = false;
 # Unredirect all windows if a full-screen opaque window is detected, to maximize performance for full-screen windows, like games.
 # Known to cause flickering when redirecting/unredirecting windows.
 # paint-on-overlay may make the flickering less obvious.
-unredir-if-possible = true;
+unredir-if-possible = false;
 
 # Specify a list of conditions of windows that should always be considered focused.
 focus-exclude = [ ];
