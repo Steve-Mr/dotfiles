@@ -360,7 +360,7 @@ for_window [title="^Origin$"] floating enable
 
 for_window [class="^wemeetapp$"] floating enable
 
-for_window [class="wechat.exe"] floating enable
+for_window [class="wechat"] floating enable
 
 for_window [title="flameshot"] floating enable
 
@@ -384,6 +384,8 @@ for_window [window_type="menu"] floating enable
 for_window [window_type="dialog"] floating enable
 
 for_window [class="SGLOH_opencv"] floating enable
+
+for_window [floating] sticky enable
 
 # Start the installed regolith-compositor
 # set_from_resource $wm.program.compositor wm.program.compositor /usr/share/regolith-compositor/init
