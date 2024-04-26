@@ -1,6 +1,12 @@
 # dotfiles
 some dotfiles (like ~~i3-gaps~~ i3, picom, polybar etc)
 
+## preview
+
+  | ![](.config/dot_assets/desktop.png) |
+  | :-------------------------------------: |
+  | ![](.config/dot_assets/desktop3.png) |
+
 ## Not included repo
 
 1. [autotiling](https://github.com/nwg-piotr/autotiling)
