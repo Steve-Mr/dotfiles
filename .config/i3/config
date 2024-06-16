@@ -349,7 +349,7 @@ include $HOME/.config/regolith3/i3/config.d/*
 
 bindsym $mod+n exec $HOME/.config/regolith3/i3/scripts/create_note.sh
 
-bindsym $mod+Shift+i exec killall easyeffects; exec /usr/bin/flatpak run --branch=stable --arch=x86_64 --command=easyeffects com.github.wwmm.easyeffects --gapplication-service
+bindsym $mod+Shift+i exec killall easyeffects; exec easyeffects --gapplication-service;
 
 bindsym XF86AudioMute exec amixer sset 'Master' toggle
 bindsym XF86AudioLowerVolume exec amixer sset 'Master' 5%-
@@ -363,7 +363,7 @@ bindsym XF86AudioPrev exec playerctl previous
 bindsym XF86MonBrightnessUp exec xbacklight -inc 20 # increase screen brightness
 bindsym XF86MonBrightnessDown exec xbacklight -dec 20 # decrease screen brightness
 
-bindsym $mod+v exec /usr/bin/diodon
+# bindsym $mod+v exec diodon
 
 
 focus_follows_mouse yes
@@ -400,6 +400,11 @@ for_window [window_type="dialog"] floating enable
 
 for_window [class="SGLOH_opencv"] floating enable
 
+for_window [class="qBittorrent"] floating enable
+
+for_window [class="copyq"] floating enable
+
+
 for_window [floating] sticky enable
 
 # Start the installed regolith-compositor
@@ -411,11 +416,12 @@ exec_always xinput set-prop "DELL0A6E:00 04F3:317E Touchpad" "libinput Natural S
 exec_always --no-startup-id /home/maary/.config/i3/scripts/dual_monitor.sh
 exec_always --no-startup-id /home/maary/.config/polybar/launch.sh
 exec_always --no-startup-id killall picom; picom --respect-prop-shadow 
+exec_always --no-startup-id killall copyq; copyq
 exec_always --no-startup-id numlockx on
-exec_always --no-startup-id /usr/bin/flatpak run --branch=stable --arch=x86_64 --command=easyeffects com.github.wwmm.easyeffects --gapplication-service
+exec_always --no-startup-id easyeffects --gapplication-service
 # exec_always --no-startup-id killall oneko; oneko -tofocus -idle 1000 -nocursor -fixrootcursor
 exec_always --no-startup-id killall dunst; dunst
-exec_always --no-startup-id killall diodon; /usr/bin/diodon
+# exec_always --no-startup-id killall diodon; diodon
 # -config ~/Build/dunst/src/mocha.conf
 # exec_always --no-startup-id /usr/bin/scratchpad_indicator.py
 exec_always --no-startup-id autotiling
