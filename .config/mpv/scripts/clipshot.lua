@@ -51,6 +51,6 @@ local function clipshot(arg)
     end
 end
 
-mp.add_key_binding('c',     'clipshot-subs',   clipshot('subtitles'))
-mp.add_key_binding('C',     'clipshot-video',  clipshot('video'))
+mp.add_key_binding('C',     'clipshot-subs',   clipshot('subtitles'))
+mp.add_key_binding('c',     'clipshot-video',  clipshot('video'))
 mp.add_key_binding('Alt+c', 'clipshot-window', clipshot('window'))

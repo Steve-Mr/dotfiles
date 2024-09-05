@@ -351,9 +351,9 @@ bindsym $mod+n exec $HOME/.config/regolith3/i3/scripts/create_note.sh
 
 bindsym $mod+Shift+i exec killall easyeffects; exec easyeffects --gapplication-service;
 
-bindsym XF86AudioMute exec amixer sset 'Master' toggle
-bindsym XF86AudioLowerVolume exec amixer sset 'Master' 5%-
-bindsym XF86AudioRaiseVolume exec amixer sset 'Master' 5%+
+bindsym XF86AudioMute exec pactl -- set-sink-mute 0 toggle
+bindsym XF86AudioLowerVolume exec pactl -- set-sink-volume 0 -5%
+bindsym XF86AudioRaiseVolume exec pactl -- set-sink-volume 0 +5%
 
 bindsym XF86AudioPlay exec playerctl play-pause
 bindsym XF86AudioPause exec playerctl play-pause
@@ -392,8 +392,8 @@ for_window [title="Qq"] floating enable
 for_window [title="Genymotion"] floating enable
 for_window [class="Genymotion"] border normal 0
 
-for_window [class="scrcpy"] floating enable
-for_window [class="scrcpy"] border normal 5
+# for_window [class="scrcpy"] floating enable
+# for_window [class="scrcpy"] border normal 5
 
 for_window [window_type="menu"] floating enable
 for_window [window_type="dialog"] floating enable
@@ -411,8 +411,8 @@ for_window [floating] sticky enable
 # set_from_resource $wm.program.compositor wm.program.compositor /usr/share/regolith-compositor/init
 # exec_always --no-startup-id $wm.program.compositor
 # exec_always --no-startup-id /home/maary/.config/polybar/polybar-themes/simple/colorblocks/scripts/pywal.sh /home/maary/Pictures/Wallpapers/101267080_p0.jpg
-exec_always xinput set-prop "DELL0A6E:00 04F3:317E Touchpad" "libinput Tapping Enabled" 1
-exec_always xinput set-prop "DELL0A6E:00 04F3:317E Touchpad" "libinput Natural Scrolling Enabled" 1
+# exec_always xinput set-prop "DELL0A6E:00 04F3:317E Touchpad" "libinput Tapping Enabled" 1
+# exec_always xinput set-prop "DELL0A6E:00 04F3:317E Touchpad" "libinput Natural Scrolling Enabled" 1
 exec_always --no-startup-id /home/maary/.config/i3/scripts/dual_monitor.sh
 exec_always --no-startup-id /home/maary/.config/polybar/launch.sh
 exec_always --no-startup-id killall picom; picom --respect-prop-shadow 
@@ -424,12 +424,14 @@ exec_always --no-startup-id killall dunst; dunst
 # exec_always --no-startup-id killall diodon; diodon
 # -config ~/Build/dunst/src/mocha.conf
 # exec_always --no-startup-id /usr/bin/scratchpad_indicator.py
+exec_always --no-startup-id qbittorrent
 exec_always --no-startup-id autotiling
 exec_always --no-startup-id nitrogen --restore
 exec --no-startup-id fcitx5 -d
 exec --no-startup-id nm-applet
 exec --no-startup-id blueman-applet &
 exec_always --no-startup-id /usr/bin/gnome-keyring-daemon --start --components=ssh,secrets,pkcs11
+exec nvidia-settings --load-config-only &
 
 exec_always /usr/lib/policykit-1-gnome/polkit-gnome-authentication-agent-1  
 exec --no-startup-id /usr/lib/x86_64-linux-gn/libexec/kdeconnectd
