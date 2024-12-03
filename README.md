@@ -1,5 +1,5 @@
 # dotfiles
-some dotfiles (like ~~i3-gaps~~ i3, picom, polybar etc)
+some dotfiles (like ~~i3-gaps~~ i3, picom, polybar, sway, waybar, rofi etc)
 
 ## preview
 

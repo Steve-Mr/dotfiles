@@ -136,6 +136,7 @@ workspace 2 output HDMI-A-1
 floating_modifier Mod4
 
 bindsym F1 exec "flameshot gui --raw | wl-copy"
+bindsym F2 exec "flameshot gui"
 
 ## Launch // Application // <> Space ##
 bindsym Mod4+space exec  rofi -show combi -combi-modi "window#drun" -modi combi -theme /home/maary/.config/rofi/launchers/type-1/style-4.rasi -icon-theme "Papirus" -show-icons
@@ -263,7 +264,8 @@ for_window [app_id="copyq"] floating enable
 for_window [title="Picture-in-Picture"]  floating enable
 for_window [app_id="flameshot"] border pixel 0, floating enable, fullscreen disable, move absolute position 0 0
 
-for_window [floating] sticky enable
+# for_window [floating] sticky enable
+for_window [app_id=".*"] sticky enable
 
 input type:touchpad {
         tap enabled
