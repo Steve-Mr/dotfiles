@@ -1,0 +1,130 @@
+{
+    "layer": "bottom",
+    "margin-top": 5,
+    "margin-left": 10,
+    "margin-right": 10,
+    "margin-botom": 10,
+    "height": 30,
+    "modules-left": [
+        "sway/workspaces",
+        "mpris"
+    ],
+    "modules-center": [
+        "sway/window"
+    ],
+    "modules-right": [
+        "pulseaudio",
+        "bluetooth",
+        "network",
+        "cpu",
+        "temperature",
+        "battery",
+        "clock",
+        "tray",
+    ],
+    "sway/window": {
+        "format": "{}",
+        "max-length": 15,
+        "rewrite": {
+            "": "Harsh"
+        },
+        "separate-outputs": true,
+    },
+    "sway/workspaces": {
+        "format": "{icon}",
+        "on-click": "activate",
+        "sort-by-number": true,
+    },
+    "clock": {
+        "format": "{:%Y-%m-%d %H:%M}",
+        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+        "format-alt": "{:%Y-%m-%d}"
+    },
+    "cpu": {
+        "format": "  {usage}%",
+        "tooltip": false
+    },
+    "memory": {
+        "format": "{}%  "
+    },
+    "temperature": {
+        "critical-threshold": 80,
+        "format": "{icon} {temperatureC}°C",
+        "format-icons": [
+            "",
+            "",
+            ""
+        ]
+    },
+    "battery": {
+        "states": {
+            "warning": 30,
+            "critical": 15
+        },
+        "format": "{icon} {capacity}%",
+        "format-full": "{icon} {capacity}%",
+        "format-charging": " {capacity}%",
+        "format-plugged": " {capacity}%",
+        "format-alt": "{time} {icon}",
+        "format-icons": [
+            "",
+            "",
+            "",
+            "",
+            ""
+        ]
+    },
+    "network": {
+        "format-wifi": "  {essid}",
+        "format-ethernet": "{cidr} ",
+        "tooltip-format": "{ifname} via {gwaddr} ",
+        "format-linked": "{ifname} (No IP) ",
+        "format-disconnected": " ⚠ ",
+        "format-alt": "{ifname}: {ipaddr}/{cidr}"
+    },
+    "pulseaudio": {
+        "format": "{icon} {volume}%",
+        // "format-bluetooth": " {desc} {volume}%",
+        // "format-bluetooth-muted": " {desc}  ",
+        "format-muted": "",
+        "format-icons": {
+            // "headphone": "",
+            // "hands-free": "",
+            // "headset": "",
+            // "phone": "",
+            // "portable": "",
+            // "car": "",
+            "default": [
+                "",
+                "",
+                ""
+            ]
+        },
+        "on-click": "pavucontrol"
+    },
+    "tray": {
+        "icon-size": 15,
+        "spacing": 5
+    },
+    "mpris": {
+        "format": "{player_icon} {title}",
+        "format-paused": "{status_icon} <i>{title}</i>",
+        "title-len": 15,
+        "player-icons": {
+            "default": "",
+        },
+        "status-icons": {
+            "paused": "",
+        },
+    },
+    "bluetooth": {
+        "format": " {status}",
+        "format-connected": " {device_alias}",
+        "format-connected-battery": " {device_alias} {device_battery_percentage}%",
+        // "format-device-preference": [ "device1", "device2" ], // preference list deciding the displayed device
+        "tooltip-format": "{controller_alias}\t{controller_address}\n\n{num_connections} connected",
+        "tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{num_connections} connected\n\n{device_enumerate}",
+        "tooltip-format-enumerate-connected": "{device_alias}\t{device_address}",
+        "tooltip-format-enumerate-connected-battery": "{device_alias}\t{device_address}\t{device_battery_percentage}%"
+    }
+}

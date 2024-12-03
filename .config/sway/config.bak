@@ -1,0 +1,498 @@
+###############################################################################
+# i3 config file for the Regolith Desktop Environment
+#
+# Please see http://i3wm.org/docs/userguide.html for a complete reference!
+#
+###############################################################################
+#
+# In this config file many values are taken from Xresources with the directive
+# set_from_resource:
+#
+# set_from_resource <i3 variable name> <Xresources key> <default value>
+#
+# This configuration file utilizes Xresource variables to change configuration
+# without having to make a copy of this config file.
+# The benefit to not copying this file is easier upgrades in the future.
+# To update a value in this config without making a copy, update the Xresource
+# value in the file ~/.config/regolith3/Xresources.
+#
+# For example, to change the bar position to the top of the screen this is the
+# i3 config entry in this file:
+# set_from_resource $i3-wm.bar.position i3-wm.bar.position bottom
+#
+# So add this line to ~/.config/regolith3/Xresources to change it's value:
+# i3-wm.bar.position: top
+#
+# Reload i3 after making Xresource changes.  Learn more at
+# https://regolith-linux.org/docs/howtos/override-xres/
+#
+###############################################################################
+#
+# This file uses a machine-parsable format for comments. The schema is:
+# ## <Category> // <Action> // <Keybinding> ##
+# Learn more at https://github.com/regolith-linux/remontoire
+#
+###############################################################################
+
+###############################################################################
+# Meta Key Mappings
+###############################################################################
+
+# Meta Key - Alt key is Mod1, and Windows key is Mod4
+
+###############################################################################
+# Launcher dialogs
+###############################################################################
+
+## Launch // Terminal // <> Enter ##
+# bindsym Mod4+Return exec /usr/bin/x-terminal-emulator
+bindsym Mod4+Return exec cool-retro-term
+
+## Launch // Browser // <><Shift> Enter ##
+bindsym Mod4+Shift+Return exec gtk-launch $(xdg-settings get default-web-browser)
+
+###############################################################################
+# Workspace Names
+# These are the labels which define each i3 workspace.
+###############################################################################
+
+
+###############################################################################
+# Workspace Keys
+# These are the keys which will be used while binding workspace switching
+###############################################################################
+
+
+###############################################################################
+# Window and Workspace Navigation
+###############################################################################
+
+## Navigate // Relative Parent // <> a ##/
+bindsym Mod4+a focus parent
+
+## Navigate // Relative Child // <> z ##/
+bindsym Mod4+z focus child
+
+## Navigate // Relative Window // <> ↑ ↓ ← → ##
+bindsym Mod4+Left focus left
+bindsym Mod4+Down focus down
+bindsym Mod4+Up focus up
+bindsym Mod4+Right focus right
+
+## Navigate // Workspaces 1-10 // <> 0..9 ##
+bindsym Mod4+1 workspace number "1"
+bindsym Mod4+2 workspace number "2"
+bindsym Mod4+3 workspace number "3"
+bindsym Mod4+4 workspace number "4"
+bindsym Mod4+5 workspace number "5"
+bindsym Mod4+6 workspace number "6"
+bindsym Mod4+7 workspace number "7"
+bindsym Mod4+8 workspace number "8"
+bindsym Mod4+9 workspace number "9"
+bindsym Mod4+10 workspace number "1"0
+## Navigate // Workspace 11 - 19 // <><Ctrl> 1..9 ##
+bindsym Mod4+Ctrl+1 workspace number "1"1
+bindsym Mod4+Ctrl+2 workspace number "1"2
+bindsym Mod4+Ctrl+3 workspace number "1"3
+bindsym Mod4+Ctrl+4 workspace number "1"4
+bindsym Mod4+Ctrl+5 workspace number "1"5
+bindsym Mod4+Ctrl+6 workspace number "1"6
+bindsym Mod4+Ctrl+7 workspace number "1"7
+bindsym Mod4+Ctrl+8 workspace number "1"8
+bindsym Mod4+Ctrl+9 workspace number "1"9
+
+## Navigate // Next Workspace // <> Tab ##
+bindsym Mod4+Tab workspace next
+
+## Navigate // Next Workspace // <><Alt> → ##
+bindsym Mod4+Mod1+Tab2 workspace next
+
+## Navigate // Next Workspace on Output // <><Ctrl> Tab ##
+bindsym Mod4+Tab_on_output workspace next_on_output
+
+## Navigate // Next Workspace on Output // <><Ctrl> l ##
+bindsym Mod4+Tab_on_output2 workspace next_on_output
+
+## Navigate // Previous Workspace // <><Shift> Tab ##
+bindsym Mod4+Shift+Tab workspace prev
+
+## Navigate // Previous Workspace // <><Alt> ← ##
+bindsym Mod4+Mod1+Shift+Tab2 workspace prev
+
+## Navigate // Previous Workspace on Output // <><Ctrl><Shift> Tab ##
+bindsym Mod4+Shift+Tab_on_output workspace prev_on_output
+
+## Navigate // Previous Workspace on Output // <><Ctrl> h ##
+bindsym Mod4+Shift+Tab_on_output2 workspace prev_on_output
+
+## Navigate // Scratchpad // <><Ctrl> a ##
+bindsym Mod4+Ctrl+a scratchpad show
+
+###############################################################################
+# Window and Workspace Configuration
+###############################################################################
+
+## Modify // Window Position // <><Shift> ↑ ↓ ← → ##
+bindsym Mod4+Shift+Left move left
+bindsym Mod4+Shift+Down move down
+bindsym Mod4+Shift+Up move up
+bindsym Mod4+Shift+Right move right
+
+## Modify // Containing Workspace // <><Ctrl><Shift> ↑ ↓ ← → ##
+bindsym Mod4+Ctrl+Shift+Left move workspace to output left
+bindsym Mod4+Ctrl+Shift+Right move workspace to output right
+bindsym Mod4+Ctrl+Shift+Up move workspace to output up
+bindsym Mod4+Ctrl+Shift+Down move workspace to output down
+
+
+## Modify // Horizontal Window Orientation // <> g ##
+bindsym Mod4+g exec "albert toggle"
+
+## Modify // Toggle Window Orientation // <> Backspace ##
+bindsym Mod4+BackSpace split toggle
+
+## Modify // Window Fullscreen Toggle // <> f ##
+bindsym Mod4+f fullscreen toggle
+
+## Modify // Window Floating Toggle // <><Shift> f ##
+bindsym Mod4+Shift+Shift+f floating toggle
+
+## Modify // Window DualScreen Fullscreen Toggle // <><Ctrl> f ##
+bindsym Mod4+f_global fullscreen toggle global
+
+## Modify // Move to Scratchpad // <><Ctrl> m ##
+bindsym Mod4+Ctrl+m move to scratchpad
+
+bindsym Mod4+m exec "maim -st 9999999 | convert - \( +clone -background black -shadow 80x3+5+5 \) +swap -background none -layers merge +repage ~/Pictures/Screenshots/maim/$(date +%s).png"
+
+## Modify // Tile/Float Focus Toggle // <><Shift> t ##
+bindsym Mod4+Shift+t focus mode_toggle
+
+## Modify // Window Layout Mode // <> t ##
+bindsym Mod4+t layout toggle tabbed splith splitv
+
+## Modify // Move Window to Workspace 1 - 10 // <><Shift> 0..9 ##
+bindsym Mod4+Shift+1 move container to workspace number "1"
+bindsym Mod4+Shift+2 move container to workspace number "2"
+bindsym Mod4+Shift+3 move container to workspace number "3"
+bindsym Mod4+Shift+4 move container to workspace number "4"
+bindsym Mod4+Shift+5 move container to workspace number "5"
+bindsym Mod4+Shift+6 move container to workspace number "6"
+bindsym Mod4+Shift+7 move container to workspace number "7"
+bindsym Mod4+Shift+8 move container to workspace number "8"
+bindsym Mod4+Shift+9 move container to workspace number "9"
+bindsym Mod4+Shift+10 move container to workspace number "1"0
+## Modify // Move Window to Workspace 11 - 19// <><Ctrl><Shift> 1..9 ##
+bindsym Mod4+Shift+Ctrl+1 move container to workspace number "1"1
+bindsym Mod4+Shift+Ctrl+2 move container to workspace number "1"2
+bindsym Mod4+Shift+Ctrl+3 move container to workspace number "1"3
+bindsym Mod4+Shift+Ctrl+4 move container to workspace number "1"4
+bindsym Mod4+Shift+Ctrl+5 move container to workspace number "1"5
+bindsym Mod4+Shift+Ctrl+6 move container to workspace number "1"6
+bindsym Mod4+Shift+Ctrl+7 move container to workspace number "1"7
+bindsym Mod4+Shift+Ctrl+8 move container to workspace number "1"8
+bindsym Mod4+Shift+Ctrl+9 move container to workspace number "1"9
+
+# move focused container to workspace, move to workspace
+## Modify // Carry Window to Workspace 1 - 10// <><Alt> 0..9 ##
+bindsym Mod4+Mod1+1 move container to workspace number "1"; workspace number "1"
+bindsym Mod4+Mod1+2 move container to workspace number "2"; workspace number "2"
+bindsym Mod4+Mod1+3 move container to workspace number "3"; workspace number "3"
+bindsym Mod4+Mod1+4 move container to workspace number "4"; workspace number "4"
+bindsym Mod4+Mod1+5 move container to workspace number "5"; workspace number "5"
+bindsym Mod4+Mod1+6 move container to workspace number "6"; workspace number "6"
+bindsym Mod4+Mod1+7 move container to workspace number "7"; workspace number "7"
+bindsym Mod4+Mod1+8 move container to workspace number "8"; workspace number "8"
+bindsym Mod4+Mod1+9 move container to workspace number "9"; workspace number "9"
+bindsym Mod4+Mod1+10 move container to workspace number "1"0; workspace number "1"0
+## Modify // Carry Window to Workspace 11 - 19 // <><Alt><Ctrl> 1..9 ##
+bindsym Mod4+Mod1+Ctrl+1 move container to workspace number "1"1; workspace number "1"1
+bindsym Mod4+Mod1+Ctrl+2 move container to workspace number "1"2; workspace number "1"2
+bindsym Mod4+Mod1+Ctrl+3 move container to workspace number "1"3; workspace number "1"3
+bindsym Mod4+Mod1+Ctrl+4 move container to workspace number "1"4; workspace number "1"4
+bindsym Mod4+Mod1+Ctrl+5 move container to workspace number "1"5; workspace number "1"5
+bindsym Mod4+Mod1+Ctrl+6 move container to workspace number "1"6; workspace number "1"6
+bindsym Mod4+Mod1+Ctrl+7 move container to workspace number "1"7; workspace number "1"7
+bindsym Mod4+Mod1+Ctrl+8 move container to workspace number "1"8; workspace number "1"8
+bindsym Mod4+Mod1+Ctrl+9 move container to workspace number "1"9; workspace number "1"9
+
+workspace_auto_back_and_forth no
+
+# Use Mouse+Mod4 to drag floating windows to their wanted position
+floating_modifier Mod4
+
+###############################################################################
+# i3 Colors and Fonts
+###############################################################################
+
+# Create variables from Xresources for i3's look.
+set_from_resource $focused.color.child_border i3-wm.client.focused.color.child_border
+
+set_from_resource $focused_inactive.color.child_border i3-wm.client.focused_inactive.color.child_border
+
+set_from_resource $unfocused.color.child_border i3-wm.client.unfocused.color.child_border
+
+set_from_resource $urgent.color.child_border i3-wm.client.urgent.color.child_border
+
+
+# Window Border color
+# class                 border                             background                         text                               indicator                          child_border
+client.focused          "#002b36"              "#586e75"          "#fdf6e3"                "#268bd2"           $focused.color.child_border
+client.focused_inactive "#002b36"     "#073642" "#839496"       "#073642"  $focused_inactive.color.child_border
+client.unfocused        "#002b36"            "#073642"        "#839496"              "#073642"         $unfocused.color.child_border
+client.urgent           "#002b36"               "#dc322f"           "#fdf6e3"                 "#002b36"            $urgent.color.child_border
+
+# Create variables from Xresources for i3bars's look.
+
+
+
+
+
+# Sets i3 font for dialogs
+font pango:Source
+bindsym F1 exec --no-startup-id flameshot gui
+# Include any regolith i3 partials
+# include /usr/share/regolith/i3/config.d/*
+
+# Include any user i3 partials
+# include $HOME/.config/regolith3/i3/config.d/*
+
+
+
+## Launch // Application // <> Space ##
+## set_from_resource rofi i3-wm.program.launcher.app rofi -show drun -theme /home/maary/.config/rofi/launchers/type-1/style-4.rasi -icon-theme "Papirus" -show-icons 
+bindsym Mod4+space exec rofi
+
+## Launch // Command // <><Shift> Space ##
+bindsym Mod4+Shift+space exec rofi
+
+## Navigate // Window by Name // <><Ctrl> Space ##
+bindsym Mod4+Ctrl+space exec rofi
+
+## Launch // StrachPad list // <><Alt> Space ##
+bindsym Ctrl+Tab exec rofi
+
+
+## Launch // Look Selector // <><Alt> l ##
+bindsym Mod4+Mod1+l exec rofi
+
+# default style 
+
+# Provide window class to float above tiled windows
+floating_maximum_size -1 x -1
+for_window [class="floating_window"] floating enable
+
+# Disable titlebar
+default_floating_border pixel 0
+set_from_resource $i3-wm.window.border.size i3-wm.window.border.size 
+default_border pixel 0
+
+# Enable popup during fullscreen
+popup_during_fullscreen smart
+
+# window focus follows your mouse movements as the mouse crosses window borders
+focus_follows_mouse no
+
+# Hiding borders adjacent to the screen edges.
+# The "smart" setting hides borders on workspaces with only one window visible.
+hide_edge_borders smart
+
+# Specify the distance between windows in pixels. (i3-gaps)
+gaps inner 8
+gaps outer 0
+
+## Resize // Enter Resize Mode // <> r ##
+mode "Resize Mode" {
+        # These bindings trigger as soon as you enter the resize mode
+
+        ## Resize // Resize Window // ↑ ↓ ← → ##
+        bindsym Left resize shrink width 6 px or 6 ppt
+        bindsym Down resize grow height 6 px or 6 ppt
+        bindsym Up resize shrink height 6 px or 6 ppt
+        bindsym Right resize grow width 6 px or 6 ppt
+
+        bindsym Shift+Left resize shrink width 12 px or 12 ppt
+        bindsym Shift+Down resize grow height 12 px or 12 ppt
+        bindsym Shift+Up resize shrink height 12 px or 12 ppt
+        bindsym Shift+Right resize grow width 12 px or 12 ppt
+
+        ## Resize // Resize Window // k j h l ##
+        bindsym $i3-wm.binding.left resize shrink width 6 px or 6 ppt
+        bindsym $i3-wm.binding.up resize grow height 6 px or 6 ppt
+        bindsym $i3-wm.binding.down resize shrink height 6 px or 6 ppt
+        bindsym $i3-wm.binding.right resize grow width 6 px or 6 ppt
+
+        bindsym $i3-wm.binding.move_left resize shrink width 12 px or 12 ppt
+        bindsym $i3-wm.binding.move_up resize grow height 12 px or 12 ppt
+        bindsym $i3-wm.binding.move_down resize shrink height 12 px or 12 ppt
+        bindsym $i3-wm.binding.move_right resize grow width 12 px or 12 ppt
+
+        ## Resize // Exit Resize Mode // Escape or Enter ##
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+        bindsym Mod4+r mode "default"
+}
+bindsym Mod4+r mode "Resize Mode"
+
+###############################################################################
+# Session Management
+###############################################################################
+
+## Session // Exit App // <><Shift> q ##
+bindsym Mod4+Shift+q [con_id="__focused__"] kill
+
+## Session // Terminate App // <><Alt> q ##
+bindsym Mod4+Mod1+q [con_id="__focused__"] exec --no-startup-id kill -9 $(xdotool getwindowfocus getwindowpid)
+
+## Session // Reload i3 Config // <><Shift> c ##
+bindsym Mod4+Shift+c reload
+
+## Session // Refresh Session // <><Shift> r ##
+# set_from_resource $i3-wm.program.refresh_ui i3-wm.program.refresh_ui 
+bindsym Mod4+Shift+r restart
+
+## Session // Restart i3 // <><Ctrl> r ##
+bindsym Mod4+Ctrl+r restart
+
+## Session // Logout // <><Shift> e ##
+## i3-wm.program.logout /usr/bin/gnome-session-quit --logout
+bindsym Mod4+Shift+e exec ~/.config/rofi/powermenu/type-1/powermenu.sh
+
+## Session // Reboot // <><Shift> b ##
+bindsym Mod4+Shift+b exec exec
+
+## Session // Power Down // <><Shift> p ##
+## set_from_resource exec i3-wm.program.shutdown /usr/bin/gnome-session-quit --power-off
+bindsym Mod4+Shift+p exec exec
+
+## Session // Lock Screen // <> Escape ##
+bindsym Mod4+Escape exec dbus-send
+
+## Session // Sleep // <><Shift> s ##
+bindsym Mod4+Shift+s exec exec
+
+# Make the currently focused window a scratchpad
+# bindsym Mod4+h scratchpad show
+bindsym Mod4+h move scratchpad
+
+# Show the first scratchpad window
+# bindsym Mod4+Shift+h move scratchpad
+
+bindsym Mod4+Shift+Ctrl+h [title="^Sup ::"] scratchpad show
+
+
+###############################################################################
+# System Management
+###############################################################################
+
+## Modify // Settings // <> s ##
+bindsym Mod4+s exec --no-startup-id gnome-control-center
+
+## Modify // Display Settings // <> d ##
+bindsym Mod4+d exec /usr/share/brightness-controller/init.py
+
+## Modify // Wifi Settings // <> w ##
+bindsym Mod4+w exec --no-startup-id gnome-control-center
+
+## Modify // Bluetooth Settings // <> b ##
+bindsym Mod4+b exec --no-startup-id gnome-control-center
+
+## Launch // File Browser // <><Shift> n ##
+bindsym Mod4+Shift+n exec --no-startup-id /usr/bin/nautilus
+
+# press ~ to claim a new workspace <> ~
+bindsym Mod4+grave exec --no-startup-id i3-new-workspace
+
+# press ~ + Shift to move current container to a new workspace
+bindsym Mod4+Shift+grave exec --no-startup-id i3-new-workspace -m
+
+
+
+bindsym Mod4+n exec $HOME/.config/regolith3/i3/scripts/create_note.sh
+
+bindsym Mod4+Shift+i exec killall easyeffects; exec easyeffects --gapplication-service;
+
+bindsym XF86AudioMute exec pactl -- set-sink-mute 0 toggle
+bindsym XF86AudioLowerVolume exec pactl -- set-sink-volume 0 -5%
+bindsym XF86AudioRaiseVolume exec pactl -- set-sink-volume 0 +5%
+
+bindsym XF86AudioPlay exec playerctl play-pause
+bindsym XF86AudioPause exec playerctl play-pause
+bindsym XF86AudioNext exec playerctl next
+bindsym XF86AudioPrev exec playerctl previous
+
+bindsym XF86MonBrightnessUp exec xbacklight -inc 20 # increase screen brightness
+bindsym XF86MonBrightnessDown exec xbacklight -dec 20 # decrease screen brightness
+
+# bindsym Mod4+v exec diodon
+
+
+focus_follows_mouse yes
+
+assign [title="^Origin$"] → Origin
+for_window [title="^Origin$"] floating enable
+
+# for_window [title="微信"] move to workspace 9
+
+for_window [class="^wemeetapp$"] floating enable
+
+for_window [class="wechat"] floating enable
+
+for_window [title="flameshot"] floating enable
+
+for_window [class="kdeconnect"] floating enable
+
+for_window [class="Main"] floating enable
+
+for_window [class="Telegram"] floating enable
+
+for_window [class="Pycalendar.py"] floating enable
+
+for_window [title="Qq"] floating enable
+
+for_window [title="Genymotion"] floating enable
+for_window [class="Genymotion"] border normal 0
+
+for_window [class="scrcpy"] floating enable
+for_window [class="scrcpy"] border normal 5
+
+for_window [window_type="menu"] floating enable
+for_window [window_type="dialog"] floating enable
+
+for_window [class="SGLOH_opencv"] floating enable
+
+for_window [class="qBittorrent"] floating enable
+
+for_window [class="copyq"] floating enable
+
+
+for_window [floating] sticky enable
+
+# Start the installed regolith-compositor
+# set_from_resource $wm.program.compositor wm.program.compositor /usr/share/regolith-compositor/init
+# exec_always --no-startup-id $wm.program.compositor
+# exec_always --no-startup-id /home/maary/.config/polybar/polybar-themes/simple/colorblocks/scripts/pywal.sh /home/maary/Pictures/Wallpapers/101267080_p0.jpg
+# exec_always xinput set-prop "DELL0A6E:00 04F3:317E Touchpad" "libinput Tapping Enabled" 1
+# exec_always xinput set-prop "DELL0A6E:00 04F3:317E Touchpad" "libinput Natural Scrolling Enabled" 1
+exec_always --no-startup-id /home/maary/.config/i3/scripts/dual_monitor.sh
+exec_always --no-startup-id /home/maary/.config/polybar/launch.sh
+exec_always --no-startup-id killall picom; picom --respect-prop-shadow 
+exec_always --no-startup-id killall copyq; copyq
+exec_always --no-startup-id numlockx on
+exec_always --no-startup-id easyeffects --gapplication-service
+# exec_always --no-startup-id killall oneko; oneko -tofocus -idle 1000 -nocursor -fixrootcursor
+exec_always --no-startup-id killall dunst; dunst
+# exec_always --no-startup-id killall diodon; diodon
+# -config ~/Build/dunst/src/mocha.conf
+# exec_always --no-startup-id /usr/bin/scratchpad_indicator.py
+exec_always --no-startup-id autotiling
+exec_always --no-startup-id nitrogen --restore
+exec --no-startup-id fcitx5 -d
+exec --no-startup-id nm-applet
+exec --no-startup-id blueman-applet &
+exec_always --no-startup-id /usr/bin/gnome-keyring-daemon --start --components=ssh,secrets,pkcs11
+
+exec_always /usr/lib/policykit-1-gnome/polkit-gnome-authentication-agent-1  
+exec --no-startup-id /usr/lib/x86_64-linux-gn/libexec/kdeconnectd
+exec_always --no-startup-id nitrogen --restore
+# exec_always --no-startup-id /home/maary/.config/regolith3/i3/scripts/vwallpaper.sh
