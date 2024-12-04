@@ -279,7 +279,8 @@ input type:keyboard {
 exec systemctl --user import-environment DISPLAY WAYLAND_DISPLAY SWAYSOCK
 exec hash dbus-update-activation-environment 2>/dev/null && \
      dbus-update-activation-environment --systemd DISPLAY WAYLAND_DISPLAY SWAYSOCK
-exec /usr/share/sway-contrib/inactive-windows-transparency.py --opacity 0.85
+# exec /usr/share/sway-contrib/inactive-windows-transparency.py --opacity 0.85
+exec /home/maary/.config/sway/scripts/inactive-windows-opacity.py --opacity 0.85
 exec swww-daemon
 exec --no-startup-id copyq
 exec --no-startup-id easyeffects --gapplication-service
