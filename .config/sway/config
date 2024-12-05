@@ -251,6 +251,7 @@ for_window [class="weixin"] floating enable
 for_window [app_id="kdeconnect"] floating enable
 for_window [app_id="Main"] floating enable
 for_window [app_id="telegram"] floating enable
+for_window [app_id="keepassxc"] floating enable
 for_window [app_id="Pycalendar.py"] floating enable
 for_window [title="Qq"] floating enable
 for_window [title="Genymotion"] floating enable
@@ -283,6 +284,7 @@ exec hash dbus-update-activation-environment 2>/dev/null && \
 exec /home/maary/.config/sway/scripts/inactive-windows-opacity.py --opacity 0.85
 exec swww-daemon
 exec --no-startup-id copyq
+exec --no-startup-id keepassxc
 exec --no-startup-id easyeffects --gapplication-service
 exec_always --no-startup-id killall dunst; dunst
 exec_always --no-startup-id autotiling

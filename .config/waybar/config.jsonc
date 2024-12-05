@@ -84,8 +84,8 @@
     },
     "pulseaudio": {
         "format": "{icon} {volume}%",
-        // "format-bluetooth": " {desc} {volume}%",
-        // "format-bluetooth-muted": " {desc}  ",
+        "format-bluetooth": "{icon} {volume}%",
+        "format-bluetooth-muted": "{icon}  ",
         "format-muted": "",
         "format-icons": {
             // "headphone": "",
@@ -111,10 +111,10 @@
         "format-paused": "{status_icon} <i>{title}</i>",
         "title-len": 15,
         "player-icons": {
-            "default": "",
+            "default": "",
         },
         "status-icons": {
-            "paused": "",
+            "paused": "",
         },
     },
     "bluetooth": {
