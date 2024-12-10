@@ -6,6 +6,7 @@
     "margin-botom": 10,
     "height": 30,
     "modules-left": [
+        "custom/launcher",
         "sway/workspaces",
         "mpris"
     ],
@@ -17,7 +18,6 @@
         "bluetooth",
         "network",
         "cpu",
-        "temperature",
         "battery",
         "clock",
         "tray",
@@ -36,7 +36,8 @@
         "sort-by-number": true,
     },
     "clock": {
-        "format": "{:%Y-%m-%d %H:%M}",
+        "interval": 1,
+        "format": "{:%Y-%m-%d %H:%M:%S}",
         "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
         "format-alt": "{:%Y-%m-%d}"
     },
@@ -100,6 +101,7 @@
                 ""
             ]
         },
+        "ignored-sinks": ["Easy Effects Sink"],
         "on-click": "pavucontrol"
     },
     "tray": {
@@ -107,8 +109,8 @@
         "spacing": 5
     },
     "mpris": {
-        "format": "{player_icon} {title}",
-        "format-paused": "{status_icon} <i>{title}</i>",
+        "format": " {player_icon} {title} ",
+        "format-paused": " {status_icon} <i>{title}</i> ",
         "title-len": 15,
         "player-icons": {
             "default": "",
@@ -126,5 +128,10 @@
         "tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{num_connections} connected\n\n{device_enumerate}",
         "tooltip-format-enumerate-connected": "{device_alias}\t{device_address}",
         "tooltip-format-enumerate-connected-battery": "{device_alias}\t{device_address}\t{device_battery_percentage}%"
+    },
+    "custom/launcher": {
+        "on-click": "rofi -show combi -combi-modi 'window#drun' -modi combi -theme /home/maary/.config/rofi/launchers/type-1/style-4.rasi -icon-theme 'Papirus' -show-icons",
+        "format": "",
+        "on-click-right": "killall rofi"
     }
 }

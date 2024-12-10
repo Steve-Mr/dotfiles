@@ -293,8 +293,8 @@ exec --no-startup-id nm-applet
 exec --no-startup-id blueman-applet &
 exec --no-startup-id qbittorrent
 exec_always --no-startup-id /usr/bin/gnome-keyring-daemon --start --components=ssh,secrets,pkcs11
-
-exec_always /usr/lib/policykit-1-gnome/polkit-gnome-authentication-agent-1  
+exec_always --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 
+# exec --no-startup-id /usr/lib/policykit-1-gnome/polkit-gnome-authentication-agent-1  
 exec --no-startup-id /usr/lib/x86_64-linux-gn/libexec/kdeconnectd
 exec --no-startup-id /usr/lib/xdg-desktop-portal -r
 
