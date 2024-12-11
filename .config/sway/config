@@ -262,7 +262,8 @@ for_window [app_id="fcitx5"] floating enable
 for_window [app_id="SGLOH_opencv"] floating enable
 for_window [app_id="qBittorrent"] floating enable
 for_window [app_id="copyq"] floating enable
-for_window [title="Picture-in-Picture"]  floating enable
+for_window [title="Picture-in-Picture"]  floating enable 
+#, exec /home/maary/.config/sway/scripts/sway_move bottom-right
 for_window [app_id="flameshot"] border pixel 0, floating enable, fullscreen disable, move absolute position 0 0
 
 # for_window [floating] sticky enable
@@ -282,6 +283,7 @@ exec hash dbus-update-activation-environment 2>/dev/null && \
      dbus-update-activation-environment --systemd DISPLAY WAYLAND_DISPLAY SWAYSOCK
 # exec /usr/share/sway-contrib/inactive-windows-transparency.py --opacity 0.85
 exec /home/maary/.config/sway/scripts/inactive-windows-opacity.py --opacity 0.85
+exec --no-startup-id /home/maary/.config/sway/scripts/remember-pip.py
 exec swww-daemon
 exec --no-startup-id copyq
 exec --no-startup-id keepassxc
