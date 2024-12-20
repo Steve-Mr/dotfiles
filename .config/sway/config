@@ -80,7 +80,7 @@ bindsym Mod4+Shift+Shift+f floating toggle
 ## Modify // Window DualScreen Fullscreen Toggle // <><Ctrl> f ##
 # bindsym Mod4+f fullscreen toggle global
 
-bindsym Mod4+m exec "maim -st 9999999 | convert - \( +clone -background black -shadow 80x3+5+5 \) +swap -background none -layers merge +repage ~/Pictures/Screenshots/maim/$(date +%s).png"
+bindsym Mod4+m exec sway-screenshot -m window -o /home/maary/Pictures/Screenshots/maim/
 
 ## Modify // Move Window to Workspace 1 - 10 // <><Shift> 0..9 ##
 bindsym Mod4+Shift+1 move container to workspace number "1"
@@ -251,6 +251,7 @@ for_window [class="weixin"] floating enable
 for_window [app_id="kdeconnect"] floating enable
 for_window [app_id="Main"] floating enable
 for_window [app_id="telegram"] floating enable
+for_window [app_id="ayugram"] floating enable
 for_window [app_id="keepassxc"] floating enable
 for_window [app_id="Pycalendar.py"] floating enable
 for_window [title="Qq"] floating enable
