@@ -51,7 +51,7 @@ button:hover {
     background-color: #eb4d4b;
 }
 
-#keyboard-state
+#keyboard-state,
 #mode {
     color: @lavender;
     background-color: @base;

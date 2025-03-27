@@ -144,8 +144,8 @@
             "capslock": "C {icon}"
         },
         "format-icons": {
-            "locked": "",
-            "unlocked": ""
+            "locked": "󰌾",
+            "unlocked": "󰿆"
         }
     },
     "sway/mode": {

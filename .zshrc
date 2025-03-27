@@ -6,8 +6,6 @@ export PATH=~/.local/share/platform-tools/:$PATH
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
 
-export PATH="/home/maary/.local/bin:$PATH"
-
 unsetopt NOMATCH
 setopt NULL_GLOB
 
@@ -141,4 +139,5 @@ fi
 unset __conda_setup
 # <<< conda initialize <<<
 
+export PATH="/home/maary/.local/bin:$PATH"
 
