@@ -12,9 +12,6 @@
         "sway/mode",
         "keyboard-state"
     ],
-    "modules-center": [
-        "sway/window"
-    ],
     "modules-right": [
         "pulseaudio",
         "bluetooth",

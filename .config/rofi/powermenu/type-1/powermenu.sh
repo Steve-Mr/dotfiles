@@ -23,7 +23,6 @@ reboot='Reboot'
 lock='Lock'
 suspend='Suspend'
 logout='Logout'
-closelid='Close Lid'
 yes='Yes'
 no='No'
 
@@ -55,7 +54,7 @@ confirm_exit() {
 
 # Pass variables to rofi dmenu
 run_rofi() {
-	echo -e "$lock\n$closelid\n$suspend\n$logout\n$reboot\n$shutdown" | rofi_cmd
+	echo -e "$lock\n$suspend\n$logout\n$reboot\n$shutdown" | rofi_cmd
 }
 
 # Execute Command
@@ -73,6 +72,7 @@ run_cmd() {
 			amixer set Master mute
 			systemctl suspend
 		elif [[ $1 == '--logout' ]]; then
+			niri msg action quit --skip-confirmation
 			i3-msg exit
 		fi
 	else

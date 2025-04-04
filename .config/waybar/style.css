@@ -63,8 +63,9 @@ button:hover {
 #custom-launcher {
     color: @text;
     background-color: @base;
-    border-radius: 0 0 0 15px;
-    padding: 0 5px 0 10px;
+    border-radius: 0 15px 0 15px;
+    padding: 0 10px 0 10px;
+    margin: 0 5px;
 }
 
 #workspaces {
@@ -131,10 +132,10 @@ button:hover {
 
 /* .modules-right, */
 /* .modules-left, */
-.modules-center {
+/* .modules-center {
     background-color: @base;
     border-radius: 15px;
-}
+} */
 
 /* .modules-right {
     padding: 0 10px;
@@ -144,9 +145,9 @@ button:hover {
     padding: 0 10px;
 } */
 
-.modules-center {
+/* .modules-center {
     padding: 0 10px;
-}
+} */
 
 #battery.charging,
 #battery.plugged {
