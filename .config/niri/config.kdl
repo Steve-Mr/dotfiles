@@ -401,7 +401,7 @@ binds {
     Mod+Shift+Slash { show-hotkey-overlay; }
 
     // Suggested binds for running programs: terminal, app launcher, screen locker.
-    Mod+Return { spawn "cool-retro-term"; }
+    Mod+Return { spawn "niri-term"; }
     Mod+Space { spawn "rofi" "-show" "combi" "-combi-modi" "window#drun" "-modi" "combi" "-theme" "/home/maary/.config/rofi/launchers/type-1/style-4.rasi" "-icon-theme" "\"Papirus\"" "-show-icons"; }
     Super+Shift+S { spawn "~/.config/sway/scripts/lock"; }
     Super+Shift+P { spawn "~/.config/rofi/powermenu/type-1/powermenu.sh"; }

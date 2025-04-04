@@ -1,0 +1,118 @@
+#!/bin/bash
+
+# ==============================================================================
+# Script to focus an idle cool-retro-term window or launch a new one
+# Works under Niri compositor using its IPC (`niri msg`)
+# ==============================================================================
+
+# --- Configuration ---
+# The application ID for cool-retro-term
+APP_ID="cool-retro-term.cool-retro-term"
+
+# --- Dependency Check ---
+# Check if niri command is installed and Niri is likely running
+if ! command -v niri &> /dev/null; then
+    echo "Error: niri command not found. Is Niri running?"
+    exit 1
+fi
+
+# --- Main Logic ---
+# Get window info using niri msg windows and parse with awk
+# awk script processes the output block by block (RS="\n\n")
+# It extracts Window ID, App ID, and Title for each window.
+# If App ID matches the target, it prints the Window ID and the unquoted Title.
+mapfile -t windows < <(niri msg windows | awk -v app_id="$APP_ID" '
+    # Set Record Separator to double newline (process block by block)
+    # Set Field Separator to newline (process line by line within a block)
+    # Pass target app_id variable, adding quotes for exact match in awk script
+    BEGIN { RS = "\n\n"; FS = "\n"; target_app_id = "\"" app_id "\"" }
+    {
+        # Initialize variables for each block
+        window_id = ""; title = ""; current_app_id = "";
+        # Iterate through lines within the block
+        for (i = 1; i <= NF; i++) {
+            # Extract Window ID, handling optional "(focused)" tag
+            if ($i ~ /^Window ID [0-9]+(:|\s+\(focused\):)/) {
+                sub(/^Window ID /, "", $i);       # Remove "Window ID " prefix
+                sub(/\s*\(focused\)/, "", $i);  # Remove optional " (focused)" part
+                sub(/:$/, "", $i);              # Remove trailing colon
+                window_id = $i;
+            # Extract App ID
+            } else if ($i ~ /^\s+App ID:/) {
+                sub(/^\s+App ID: /, "", $i); current_app_id = $i;
+            # Extract Title
+            } else if ($i ~ /^\s+Title:/) {
+                sub(/^\s+Title: /, "", $i); title = $i;
+            }
+        }
+        # If the extracted App ID matches the target App ID
+        if (current_app_id == target_app_id) {
+            # Remove surrounding quotes from the title for bash regex matching
+            gsub(/^"|"$/, "", title);
+            # Print the Window ID and the Title, separated by a space
+            print window_id " " title
+        }
+    }
+')
+
+# Variable to store the ID of an idle window, if found
+idle_window_id=""
+
+# Iterate through the filtered cool-retro-term windows (output from awk)
+for window_info in "${windows[@]}"; do
+    # Extract Window ID (first part) and Name/Title (rest of the string)
+    # This handles names/titles that might contain spaces
+    win_id="${window_info%% *}"
+    win_name="${window_info#* }"
+
+    # --- Debugging Output (Optional) ---
+    # Uncomment the lines below to see details during execution
+    # echo "--- Debug ---"
+    # echo "Checking Niri Window ID: $win_id"
+    # echo "Title for Check: '$win_name'"
+
+    is_idle=false
+    # Check 1: Exact match "cool-retro-term"
+    if [[ "$win_name" == "cool-retro-term" ]]; then
+        # echo "Match Result: YES (Exact match 'cool-retro-term')"
+        is_idle=true
+    # Check 2: Matches user@host:path pattern (using simplified regex)
+    # This regex ONLY checks the prompt pattern. Using capturing group (...) as it passed basic tests.
+    # Directory part handles '~', '/path/...', and '~/path/...'.
+    elif [[ "$win_name" =~ ^[^@]+@[^:]+:(~|~/[^[:space:]]*|/[^[:space:]]*)$ ]]; then
+        # echo "Match Result: YES (Prompt pattern match)"
+        is_idle=true
+    # else
+        # echo "Match Result: NO"
+    fi
+
+    # If either check found an idle window
+    if $is_idle; then
+        # echo "Found idle Niri window: ID $win_id, Title '$win_name'"
+        idle_window_id="$win_id"
+        # echo "--- End Debug ---"
+        break # Stop searching once an idle window is found
+    # else
+        # echo "--- End Debug ---"
+    fi
+done
+
+# --- Action ---
+# If an idle window's ID was stored, focus that window using niri msg action
+if [[ -n "$idle_window_id" ]]; then
+    # --- Debugging Output (Optional) ---
+    # Uncomment the line below to confirm focusing action
+    # echo "Focusing Niri window: $idle_window_id"
+    # Use 'niri msg action focus-window --id <ID>' based on error message
+    niri msg action focus-window --id "$idle_window_id"
+else
+    # If no idle window was found (either none exist or all are busy)
+    # --- Debugging Output (Optional) ---
+    # Uncomment the line below to confirm launching action
+    # echo "No idle Niri window found. Launching a new instance of $APP_ID."
+    # Launch a new instance of cool-retro-term in the background
+    cool-retro-term &
+fi
+
+# Exit successfully
+exit 0
