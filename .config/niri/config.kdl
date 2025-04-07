@@ -15,7 +15,7 @@ input {
             // For example:
             // layout "us,ru"
             // options "grp:win_space_toggle,compose:ralt,ctrl:nocaps"
-            options "numlock:on" 
+            options "numpad:mac"
         }
     }
 
@@ -37,11 +37,11 @@ input {
     mouse {
         // off
         // natural-scroll
-        // accel-speed 1.0
+        accel-speed 1.0
         // accel-profile "flat"
         // scroll-method "no-scroll"
         // accel-profile "flat"
-        scroll-factor 1.0
+        scroll-factor 2.0
     }
 
     trackpoint {
@@ -159,6 +159,7 @@ layout {
         proportion 0.5
         proportion 0.66667
         proportion 0.8
+        proportion 1.0
 
         // Fixed sets the width in logical pixels exactly.
         // fixed 1920
