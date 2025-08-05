@@ -37,11 +37,11 @@ input {
     mouse {
         // off
         // natural-scroll
-        accel-speed 1.0
+        // accel-speed 1.0
         // accel-profile "flat"
         // scroll-method "no-scroll"
         // accel-profile "flat"
-        scroll-factor 2.0
+        // scroll-factor 2.0
     }
 
     trackpoint {
@@ -126,13 +126,17 @@ environment {
 
 output "eDP-1" {
     // off
-    mode "1920x1080@120.015"
     scale 1.0
 }
 
 output "HDMI-A-1" {
-    mode "1690x1050@59.883"
-    scale 1.0
+    mode "1680x1050"
+    // // mode "1440x900@74.984"
+    // scale 1.0
+}
+
+debug {
+    render-drm-device "/dev/dri/renderD128https://bbs.nga.cn/read.php?tid=44225234"
 }
 
 // Settings that influence how windows are positioned and sized.
@@ -293,7 +297,7 @@ spawn-at-startup "waybar"
 spawn-at-startup "swww-daemon"
 spawn-at-startup "copyq"
 spawn-at-startup "keepassxc"
-spawn-at-startup "easyeffects" "--gapplication-service"
+// spawn-at-startup "easyeffects" "--gapplication-service"
 spawn-at-startup "dunst"
 spawn-at-startup "fcitx5" "-d"
 spawn-at-startup "nm-applet"
@@ -354,8 +358,8 @@ window-rule {
 // Open the Firefox picture-in-picture player as floating by default.
 window-rule { 
     match app-id=r#"^wemeetapp$"#
-    match app-id=r#"wechat"#
-    match app-id=r#"weixin"#
+    // match app-id=r#"wechat"#
+    // match app-id=r#"weixin"#
     match app-id=r#"kdeconnet"#
     match app-id=r#"keepassxc"#
     match app-id=r#"Genymotion"#
